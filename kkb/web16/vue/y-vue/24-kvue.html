@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <p>{{count}}</p>
+    <p>{{count}}</p>
+    <p k-text="count"></p>
+    <p k-html="desc"></p>
+  </div>
+
+  <script src="./24-kvue.js"></script>
+  <script src="./24-compile.js"></script>
+  <script>
+    const app = new KVue({
+      el: '#app',
+      data: {
+        count: 1,
+        desc: '<span style="color: green;">vue is ok</span>'
+      }
+    })
+    setInterval(() => {
+      app.count++
+    }, 5000)
+  </script>
+</body>
+
+</html>
