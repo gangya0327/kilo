@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  width: 100%;
+  height: 560px;
+  background: #f9b7b7;
+  position: relative;
+}
+
+.container {
+  width: 920px;
+  height: 450px;
+  border: 6px solid #caf;
+  border-radius: 16px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.prize {
+  width: 294px;
+  height: 104px;
+  background-color: #f3db5e;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  color: #fff;
+  border: 3px solid #f3dbae;
+}
+
+.prize.active {
+  color: #f3db5e;
+  font-weight: bold;
+  border: 3px solid rgb(250, 49, 49);
+  background-color: rgb(250, 49, 49);
+}
+
+.prize:nth-child(1) {
+  left: 5px;
+  top: 5px;
+}
+.prize:nth-child(2) {
+  left: 310px;
+  top: 5px;
+}
+.prize:nth-child(3) {
+  left: 615px;
+  top: 5px;
+}
+.prize:nth-child(4),
+.prize:nth-child(8) {
+  width: 144px;
+  height: 204px;
+  left: 765px;
+  top: 120px;
+  flex-direction: column;
+}
+.prize:nth-child(5) {
+  left: 615px;
+  top: 335px;
+}
+.prize:nth-child(6) {
+  left: 310px;
+  top: 335px;
+}
+.prize:nth-child(7) {
+  left: 5px;
+  top: 335px;
+}
+.prize:nth-child(8) {
+  left: 5px;
+}
+.prize > span {
+  padding-left: 30px;
+}
+
+.prize > img {
+  width: 150px;
+  height: 104px;
+}
+
+.prize:nth-child(4) > span,
+.prize:nth-child(8) > span {
+  padding-left: 0;
+  padding-top: 30px;
+}
+
+.controller {
+  width: 600px;
+  height: 210px;
+  background-color: #ace;
+  position: absolute;
+  top: 120px;
+  left: 160px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  justify-content: space-around;
+}
+
+.controller .left {
+  color: rgb(255, 255, 100);
+  font-size: 40px;
+  font-weight: bold;
+}
+.controller .right {
+  width: 180px;
+  height: 80px;
+  border-radius: 8px;
+  line-height: 80px;
+  text-align: center;
+  font-size: 30px;
+  color: rgb(255, 255, 100);
+  letter-spacing: 4px;
+  background-color: rgb(241, 49, 49);
+  cursor: pointer;
+  box-shadow: 0 0 3px #333;
+  user-select: none;
+}
+
+.controller .right:hover {
+  box-shadow: 2px 0 10px #333;
+  font-weight: bold;
+}
+
+.dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.content {
+  width: 400px;
+  height: 180px;
+  border-radius: 4px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+}
+
+.head {
+  height: 40px;
+  color: #fff;
+  display: flex;
+  padding: 0 20px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: orange;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.text {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 22px;
+  color: red;
+}
+
+.confirm {
+  width: 80px;
+  height: 30px;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 2px;
+  background: orange;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
