@@ -1,0 +1,12 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid #eee;
+  position: relative;
+}
+
+.container img {
+  position: absolute;
+  width: 220px;
+  transition: all 0.3s;
+}
