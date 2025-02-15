@@ -1,0 +1,82 @@
+{
+  "code": "00",
+  "data": {
+      "total": 9,
+      "list": [
+          {
+              "id": 9,
+              "name": "预付卡场景1.0",
+              "introduce": "预付卡场景1.0",
+              "typeSort": null
+          },
+          {
+              "id": 7,
+              "name": "model3",
+              "introduce": "1",
+              "typeSort": 0
+          },
+          {
+              "id": 2,
+              "name": "企业预警模型",
+              "introduce": "test2",
+              "typeSort": 1
+          },
+          {
+              "id": 6,
+              "name": "model2",
+              "introduce": "1",
+              "typeSort": 1
+          },
+          {
+              "id": 4,
+              "name": "特殊领域根系模型",
+              "introduce": "333",
+              "typeSort": 2
+          },
+          {
+              "id": 1,
+              "name": "事件分析模型",
+              "introduce": "1111111111111111111",
+              "typeSort": 3
+          },
+          {
+              "id": 8,
+              "name": "应用模型2",
+              "introduce": "新模型",
+              "typeSort": 23
+          },
+          {
+              "id": 3,
+              "name": "个体预警模型",
+              "introduce": "222",
+              "typeSort": 111
+          },
+          {
+              "id": 11,
+              "name": "三源四重治理",
+              "introduce": "三源四重治理模型",
+              "typeSort": 120
+          }
+      ],
+      "pageNum": 1,
+      "pageSize": 9,
+      "size": 9,
+      "startRow": 0,
+      "endRow": 8,
+      "pages": 1,
+      "prePage": 0,
+      "nextPage": 0,
+      "isFirstPage": true,
+      "isLastPage": true,
+      "hasPreviousPage": false,
+      "hasNextPage": false,
+      "navigatePages": 8,
+      "navigatepageNums": [
+          1
+      ],
+      "navigateFirstPage": 1,
+      "navigateLastPage": 1
+  },
+  "message": "操作成功",
+  "success": true
+}

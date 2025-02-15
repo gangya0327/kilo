@@ -1,0 +1,25 @@
+.pager {
+  text-align: center;
+}
+
+.pager a {
+  border: 1px solid #e1e2e3;
+  color: #001ac4;
+  display: inline-block;
+  line-height: 34px;
+  padding: 0 12px;
+  margin: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pager a.active {
+  border: none;
+  color: #001ac4;
+  cursor: auto;
+}
+
+.pager a.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}

@@ -1,0 +1,50 @@
+.container {
+  border: 1px solid rgb(207, 188, 188);
+  width: 500px;
+  height: 500px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(247, 230, 183);
+}
+
+.chessboard {
+  width: 92%;
+  height: 92%;
+  border-collapse: collapse;
+}
+
+.chessboard td {
+  border: 1px solid #111;
+  position: relative;
+}
+
+.chess {
+  border: 1px solid lightgrey;
+  border-radius: 50%;
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 80%;
+  height: 80%;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.white {
+  background-color: #fff;
+}
+
+.black {
+  background-color: #000;
+  color: #fff;
+}
+
+.win {
+  border: 1px solid red;
+  box-shadow: 0 0 3px 2px red;
+}
