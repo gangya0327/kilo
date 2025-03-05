@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  text-align: center;
+}
+
+video {
+  width: 30%;
+}
+
+.controls {
+  margin: 10px 0;
+  display: none;
+}
+
+.active {
+  background: #fb8;
+}

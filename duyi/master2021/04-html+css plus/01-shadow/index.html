@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      margin: 20px;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+
+    .box1 {
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 0 10px #ccc;
+    }
+
+    .img1 {
+      border-radius: 16px;
+    }
+
+    .img2 {
+      border-radius: 50%;
+      box-shadow: 0 0 5px 10px #fff, 0 0 15px 15px #222;
+    }
+
+    .btn1 {
+      width: 150px;
+      height: 50px;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      background: linear-gradient(to bottom, #acd4ff, #4293fc);
+    }
+
+    .btn1:active {
+      background: #4293fc;
+      box-shadow: 0 0 0 3px #fff, 0 0 0 5px #4293fc;
+    }
+
+    .box2 {
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      background: rgb(226, 209, 226);
+      box-shadow: 0 0 5px #ccc;
+      border-radius: 5px 30px 5px 5px;
+      transform: rotate(8deg);
+    }
+
+    .box3 {
+      width: 100%;
+      height: 100%;
+      background: rgb(255, 194, 172);
+      position: relative;
+    }
+
+    .box31 {
+      width: 80px;
+      height: 80px;
+      border: 2px solid #26ad4c;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .triangle {
+      border: 100px solid;
+      border-color: transparent transparent blue transparent;
+    }
+
+    .triangle:hover {
+      transform-origin: center 150px;
+      transform: rotate(.5turn);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="box1">我是一个盒子</div>
+  </div>
+  <div class="box">
+    <img class="img1" src="./1.jpg" alt="" width="200" height="200">
+  </div>
+  <div class="box">
+    <img class="img2" src="./1.jpg" alt="" width="200" height="200">
+  </div>
+  <div class="box">
+    <button class="btn1">Click Me</button>
+  </div>
+  <div class="box">
+    <div class="box2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi est et reprehenderit excepturi,
+      obcaecati vitae magnam delectus, optio illum corrupti, distinctio
+      ratione qui facere.</div>
+  </div>
+  <div class="box">
+    <div class="box3">
+      <div class="box31">我是一个盒子</div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="triangle"></div>
+  </div>
+</body>
+
+</html>
