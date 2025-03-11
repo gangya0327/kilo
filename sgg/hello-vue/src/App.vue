@@ -1,47 +1,46 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="app">
+    <nav>
+      <router-link to="/home">首页</router-link>
+      <router-link to="/news">新闻</router-link>
+      <router-link to="/pinia">状态管理</router-link>
+      <router-link to="/communication">组件传值</router-link>
+      <router-link to="/advance">进阶</router-link>
+      <router-link to="/customRef">customRef</router-link>
+      <router-link to="/teleport">teleport</router-link>
+      <router-link to="/suspense">suspense</router-link>
+      <router-link to="/about">关于</router-link>
+    </nav>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <main>
+      <router-view></router-view>
+    </main>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.app {
+  background-color: #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+nav {
+  margin: 20px 10px;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+nav a {
+  margin-right: 20px;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+main {
+  padding: 20px;
+  min-height: 400px;
+  background: #eeb;
+  border-radius: 10px;
 }
 </style>
