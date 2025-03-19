@@ -12,9 +12,19 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { Suspense } from 'vue';
+<script setup>
 import Child from './Child.vue';
+
+import { getInfo } from '@/api/user.js';
+// import userService from '@/api/user.js';
+
+// function getInfoFn() {
+//   // userService.getInfo({ data: 123 }).then((res) => {
+//   getInfo({ data: 123 }).then((res) => {
+//     console.log('haha');
+//    })
+// }
+// getInfoFn()
 </script>
 
 <style scoped>
