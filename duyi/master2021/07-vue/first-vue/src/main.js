@@ -4,9 +4,12 @@ import App from './App.vue';
 
 Vue.config.productionTip = false;
 
-import './styles/global.less';
+import '@/styles/global.less';
 
-import router from '@/router'
+import { showMessage } from '@/utils';
+Vue.prototype.$showMessage = showMessage;
+
+import router from '@/router';
 
 new Vue({
   router,
