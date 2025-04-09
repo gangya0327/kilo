@@ -3,8 +3,11 @@
     <Avatar url="https://i.postimg.cc/zDRPKpdQ/avatar2.png" :size="120" />
     <h1 class="title">我的个人空间</h1>
     <Menu />
-    <Contact />
-    <p class="footer">备20250409</p>
+
+    <div class="footer">
+      <Contact />
+      <div class="copyright">备20250409</div>
+    </div>
   </div>
 </template>
 
@@ -28,10 +31,12 @@ export default {
   box-sizing: border-box;
   overflow-x: auto;
   overflow-y: hidden;
+  position: relative;
 }
 
 .avatar-container {
   text-align: center;
+  margin-top: 50px;
 }
 
 .title {
@@ -41,8 +46,15 @@ export default {
 }
 
 .footer {
-  text-align: center;
-  font-size: 12px;
-  color: @gray;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+
+  .copyright {
+    text-align: center;
+    font-size: 12px;
+    color: @gray;
+  }
 }
 </style>

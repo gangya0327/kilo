@@ -58,7 +58,7 @@ export default {
     height: 45px;
 
     .icon {
-      width: 28px;
+      width: 40px;
     }
 
     &:hover {
