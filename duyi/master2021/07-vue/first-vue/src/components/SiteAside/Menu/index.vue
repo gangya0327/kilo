@@ -1,11 +1,12 @@
 <template>
   <div class="menu-container">
-    <a v-for="(item, index) in items" :key="index" :href="item.link" :class="{ selected: isSelected(item) }">
+    <router-link :exact="item.exact" v-for="(item, index) in items" :key="index" :to="item.link" active-class="selected"
+      exact-active-class="">
       <div class="icon">
         <Icon :type="item.icon" />
       </div>
       <span>{{ item.title }}</span>
-    </a>
+    </router-link>
   </div>
 </template>
 
@@ -23,24 +24,14 @@ export default {
   data() {
     return {
       items: [
-        { link: '/', title: '首页', icon: 'icon-home' },
-        { link: '/blog', title: '文章', icon: 'icon-content', startWith: true },
-        { link: '/about', title: '关于', icon: 'icon-koubei' },
-        { link: '/project', title: '项目', icon: 'icon-card' },
-        { link: '/message', title: '留言', icon: 'icon-chat' },
+        { link: '/', title: '首页', icon: 'icon-home', exact: true },
+        { link: '/blog', title: '文章', icon: 'icon-content', exact: false },
+        { link: '/project', title: '项目', icon: 'icon-card', exact: true },
+        { link: '/message', title: '留言', icon: 'icon-chat', exact: true },
+        { link: '/about', title: '关于', icon: 'icon-koubei', exact: true },
       ]
     }
   },
-  methods: {
-    isSelected(item) {
-      const path = location.pathname
-      if (item.startWith) {
-        return path.startsWith(item.link)
-      } else {
-        return path === item.link
-      }
-    }
-  }
 }
 </script>
 

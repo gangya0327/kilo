@@ -8,7 +8,7 @@
       </template>
 
       <div class="main">
-        一段中间区域文本
+        <router-view></router-view>
       </div>
 
       <!-- <template #right>
