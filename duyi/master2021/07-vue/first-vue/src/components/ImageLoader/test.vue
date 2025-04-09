@@ -1,6 +1,6 @@
 <template>
   <div class="test-container">
-    <h1>Test</h1>
+    <h1>ImageLoader</h1>
     <ImageLoader src="https://i.postimg.cc/zDRPKpdQ/avatar2.png" placeholder="https://i.postimg.cc/zDRPKpdQ/avatar2.png"
       @load="handleLoaded" />
   </div>

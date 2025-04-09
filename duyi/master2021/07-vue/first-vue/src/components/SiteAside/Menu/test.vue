@@ -1,25 +1,24 @@
 <template>
   <div class="test-container">
-    <h1>Empty</h1>
-    <Empty />
+    <h1>Menu</h1>
+    <Menu />
   </div>
 </template>
 
 <script>
-import Empty from './index.vue'
+import Menu from './index.vue'
 
 export default {
   name: 'Test',
-  components: { Empty }
+  components: { Menu }
 }
 </script>
 
 <style scoped>
 .test-container {
-  width: 500px;
-  height: 400px;
-  border: 1px solid #ccc;
+  width: 400px;
+  height: 600px;
+  background: #212;
   margin: 0 auto;
-  position: relative;
 }
 </style>

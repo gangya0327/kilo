@@ -1,25 +1,22 @@
 <template>
   <div class="test-container">
-    <h1>Empty</h1>
-    <Empty />
+    <SiteAside />
   </div>
 </template>
 
 <script>
-import Empty from './index.vue'
+import SiteAside from './index.vue'
 
 export default {
   name: 'Test',
-  components: { Empty }
+  components: { SiteAside }
 }
 </script>
 
 <style scoped>
 .test-container {
-  width: 500px;
-  height: 400px;
-  border: 1px solid #ccc;
+  width: 250px;
+  border: 2px solid red;
   margin: 0 auto;
-  position: relative;
 }
 </style>

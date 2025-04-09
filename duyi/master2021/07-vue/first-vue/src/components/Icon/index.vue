@@ -14,9 +14,10 @@ export default {
 </script>
 
 <style scoped>
-@import url(//at.alicdn.com/t/c/font_575001_ynnwdsu3b2.css);
+@import '//at.alicdn.com/t/c/font_4885896_hmw97jlzgv7.css';
+/* https://www.iconfont.cn/manage/index?spm=a313x.manage_type_myicons.i1.db775f1f3.52203a81cWUNob&manage_type=myprojects&projectId=4885896 */
 
 .iconfont {
-  font-size: 30px;
+  font-size: 22px;
 }
 </style>

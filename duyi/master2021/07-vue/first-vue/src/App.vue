@@ -5,7 +5,7 @@
       <Avatar url="https://i.postimg.cc/zDRPKpdQ/avatar2.png" :size="120" />
       <Avatar url="https://i.postimg.cc/nzLfn7pJ/pink.png" :size="80" />
       <Icon type="icon-home" />
-      <Icon type="icon-date" />
+      <Icon type="icon-calendar" />
     </div>
 
     <div class="part">

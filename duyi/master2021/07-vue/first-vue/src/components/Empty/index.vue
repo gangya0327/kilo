@@ -1,6 +1,6 @@
 <template>
   <div class="empty-container">
-    <Icon type="icon-date" />
+    <Icon type="icon-anger" />
     <p>{{ text }}</p>
   </div>
 </template>

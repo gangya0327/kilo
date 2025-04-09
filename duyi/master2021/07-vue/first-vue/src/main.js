@@ -1,10 +1,10 @@
 import Vue from 'vue';
 // import App from './App.vue'
-import ImageLoader from '@/components/ImageLoader/test.vue';
+import Test from '@/components/SiteAside/test.vue';
 
 import './styles/global.less';
 
 new Vue({
   // render: h => h(App),
-  render: (h) => h(ImageLoader),
+  render: (h) => h(Test),
 }).$mount('#app');
