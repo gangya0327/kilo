@@ -7,9 +7,7 @@
         </div>
       </template>
 
-      <div class="main">
-        <router-view></router-view>
-      </div>
+      <router-view></router-view>
 
       <!-- <template #right>
         <div class="right">

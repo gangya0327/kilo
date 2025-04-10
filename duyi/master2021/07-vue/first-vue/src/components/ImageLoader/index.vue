@@ -1,6 +1,5 @@
 <template>
   <div class="image-loader-container">
-    {{ originLoaded }}
     <img v-if="!allDone" :src="placeholder" alt="" class="placeholder">
     <img :src="src" alt="" :style="{ opacity: originOpacity, transition: `${duration}ms` }" @load="handleLoaded">
   </div>
