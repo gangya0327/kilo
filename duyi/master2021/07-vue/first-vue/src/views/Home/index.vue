@@ -6,12 +6,14 @@
 </template>
 
 <script>
-import { showMessage } from '@/utils';
+import { getBanners } from '@/api/test'
 
 export default {
+  mounted() {
+    getBanners()
+  },
   methods: {
     handleClick() {
-      // showMessage({ content: '操作成功', type: 'success', duration: 1000, container: this.$refs.home })
       this.$showMessage({ content: '操作失败', type: 'warning', duration: 1000, container: this.$refs.home })
     }
   }

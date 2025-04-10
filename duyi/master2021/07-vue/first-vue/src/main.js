@@ -11,6 +11,8 @@ Vue.prototype.$showMessage = showMessage;
 
 import router from '@/router';
 
+import '@/mock'
+
 new Vue({
   router,
   render: (h) => h(App),

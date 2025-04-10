@@ -9,7 +9,7 @@ export default function showMessage(options = {}) {
     info: 'icon-details',
     success: 'icon-selected',
     warning: 'icon-warn',
-    error: 'icon-close_circle',
+    danger: 'icon-close_circle',
   }[type];
   const iconDom = getComponentRootDom(Icon, {
     type: iconType,
@@ -17,8 +17,10 @@ export default function showMessage(options = {}) {
   div.innerHTML = `<span class=${style.icon}>${iconDom.outerHTML}</span><div>${content}</div>`;
   div.className = `${style.message} ${style['message-' + type]}`;
 
-  if (getComputedStyle(container).position === 'static') {
-    container.style.position = 'relative';
+  if (options.container) {
+    if (getComputedStyle(container).position === 'static') {
+      container.style.position = 'relative';
+    }
   }
   container.appendChild(div);
 
