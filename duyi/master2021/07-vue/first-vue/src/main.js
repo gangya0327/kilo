@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
-// import Test from '@/components/Layout/test.vue';
+// import Test from '@/components/Loading/test.vue';
 
 Vue.config.productionTip = false;
 
@@ -11,7 +11,10 @@ Vue.prototype.$showMessage = showMessage;
 
 import router from '@/router';
 
-import '@/mock'
+import '@/mock';
+
+import vLoading from '@/directives/loading';
+Vue.directive('loading', vLoading);
 
 new Vue({
   router,

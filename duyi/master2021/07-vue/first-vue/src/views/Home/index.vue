@@ -1,5 +1,5 @@
 <template>
-  <div class="home-container" ref="container" @wheel="handleScroll">
+  <div v-loading="isLoading" class="home-container" ref="container" @wheel="handleScroll">
     <ul class="carousel-container" :style="{ marginTop: marginTop }" @transitionend="handleScrollEnd">
       <li v-for="item in banners" :key="item.id">
         <carousel-item :carousel="item"></carousel-item>
@@ -27,7 +27,7 @@ import Icon from '@/components/Icon';
 export default {
   components: { CarouselItem, Icon },
   data() {
-    return { banners: [], index: 0, containerHeight: 0, isScrolling: false }
+    return { banners: [], index: 0, containerHeight: 0, isScrolling: false, isLoading: true }
   },
   computed: {
     marginTop() {
@@ -37,6 +37,7 @@ export default {
   async created() {
     this.banners = await getBanners()
     // console.log(this.banners);
+    this.isLoading = false
   },
   mounted() {
     this.handleResize()
@@ -82,7 +83,6 @@ export default {
   width: 100%;
   height: 100%;
   position: relative;
-  background: @dark;
   overflow: hidden;
 
   ul {
