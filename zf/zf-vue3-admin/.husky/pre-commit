@@ -1,3 +1,4 @@
-echo "npm test"
+echo "test start"
 npm run test
 npx lint-staged
+echo "test end"
