@@ -5,6 +5,7 @@
 - vue 3.5+
 - eslint 9.28.0
 - prettier
+- husky
 
 ## 工程搭建
 
@@ -47,3 +48,19 @@ indent_style = space
 indent_size = 2
 end_of_line = lf
 ```
+
+### 配置 husky
+`pnpm i husky lint-staged -D`
+
+在`package.json`中添加以下内容：
+```json
+"lint-staged": {
+  "src/**/*.{js,cjs,ts,vue}": [
+    "npx eslint --fix"
+  ],
+  "src/**/*.{html,json,css,scss,}": [
+    "npx prettier --write"
+  ]
+}
+```
+初始化`npx husky init`
