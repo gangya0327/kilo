@@ -1,7 +1,7 @@
-const msg = '123'
+const ggg = '123'
 
 function go(params) {
   return '123'
 }
 
-console.log(444);
+console.log(555);

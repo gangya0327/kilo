@@ -4,6 +4,6 @@ import App from "./App.vue"
 
 createApp(App).mount("#app")
 
-const ccc = 123
+const aaa = 123
 
 console.log(1231)
