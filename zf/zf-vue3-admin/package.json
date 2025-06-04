@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint",
     "lint:fix": "eslint --fix --quiet",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "test me"
   },
   "dependencies": {
     "eslint-plugin-prettier": "^5.4.1",
