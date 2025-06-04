@@ -5,7 +5,7 @@
 - vue 3.5+
 - eslint 9.28.0
 - prettier
-- husky
+- husky + commitlint
 
 ## 工程搭建
 
@@ -52,7 +52,7 @@ end_of_line = lf
 ### 配置 husky
 `pnpm i husky lint-staged -D`
 
-在`package.json`中添加以下内容：
+在 `package.json` 中添加以下内容：
 ```json
 "lint-staged": {
   "src/**/*.{js,cjs,ts,vue}": [
@@ -63,4 +63,12 @@ end_of_line = lf
   ]
 }
 ```
-初始化`npx husky init`
+初始化 `npx husky init`
+
+*⚠️ 注意：需要放在 git 仓库根路径下，否则可能不执行钩子函数*
+
+### 规范提交信息 commitlint
+
+`pnpm install @commitlint/cli @commitlint/config conventional -D`
+
+添加 `commit-msg` 钩子
