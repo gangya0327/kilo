@@ -7,19 +7,19 @@
 - prettier
 - husky + commitlint
 
-## 工程搭建
+## 项目搭建
 
 ### 创建项目
 
 `pnpm create vite`
 依次选择：vue, typescript
 
-### 配置 eslint
+### 安装 eslint
 
 `npx eslint --init`
 ![alt text](./readme/eslint.png)
 
-### 配置 prettier
+### 安装 prettier
 
 `pnpm install prettier eslint-plugin-prettier eslint-config-prettier -D`
 
@@ -49,7 +49,7 @@ indent_size = 2
 end_of_line = lf
 ```
 
-### 配置 husky
+### 安装 husky
 `pnpm i husky lint-staged -D`
 
 在 `package.json` 中添加以下内容：
@@ -72,3 +72,39 @@ end_of_line = lf
 `pnpm install @commitlint/cli @commitlint/config conventional -D`
 
 添加 `commit-msg` 钩子
+
+## 基础构建
+
+### 安装路由
+
+`pnpm i vue-router`
+
+### 安装 Pinia
+
+`pnpm i pinia`
+
+### 安装 element-plus
+
+`pnpm i element-plus`
+
+### 设置路径别名 alias
+
+`vite.config.ts` 文件
+```
+resolve: {
+  alias: [
+    {
+      find: "@",
+      replacement: path.resolve(__dirname, "src")
+    }
+  ]
+},
+```
+
+`tsconfig.app.json` 文件
+```
+"baseUrl": ".",
+"paths": {
+  "@/*": ["src/*"]
+},
+```

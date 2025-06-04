@@ -25,7 +25,8 @@ export default defineConfig([
   { plugins: { prettier } },
   {
     rules: {
-      "no-console": "warn"
+      "no-console": "warn",
+      "vue/multi-word-component-names": "off"
     }
   }
   // prettierRecommended
