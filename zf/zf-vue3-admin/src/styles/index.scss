@@ -1,0 +1,8 @@
+@import "./variable.module.scss";
+
+// css 变量，可供 uno css 使用
+:root {
+  --sidebar-width: #{$sidebarWidth};
+  --navbar-height: #{$navbarHeight};
+  --tags-View-height: #{$tagsViewHeight};
+}

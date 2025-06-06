@@ -108,3 +108,67 @@ resolve: {
   "@/*": ["src/*"]
 },
 ```
+
+## 页面样式开发
+
+### 布局页面 layout
+
+### 安装 Sass
+
+`pnpm i sass -D`
+
+### 安装 UnoCSS
+
+`pnpm i unocss @unocss/transformer-directives -D`
+
+`uno.config.ts` 文件
+```ts
+import { defineConfig, presetWind3, presetAttributify } from "unocss"
+import transformerDirectives from "@unocss/transformer-directives"
+
+export default defineConfig({
+  presets: [presetWind3(), presetAttributify()],
+  transformers: [transformerDirectives()] // 类似 apply
+})
+```
+
+`vite.config.ts` 文件
+
+```ts
+import UnoCSS from "unocss/vite"
+
+plugins: [
+  UnoCSS()
+]
+```
+
+`main.ts` 文件
+
+```ts
+import 'virtual:uno.css'
+```
+
+### 样式清除
+
+`pnpm i normalize.css`
+
+### Element Plus 按需引入
+
+`pnpm install -D unplugin-vue-components unplugin-auto-import`
+
+`vite.config.ts` 文件
+
+```ts
+import AutoImport from "unplugin-auto-import/vite"
+import Components from "unplugin-vue-components/vite"
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers"
+
+plugins: [
+  AutoImport({
+    resolvers: [ElementPlusResolver()] // 解析 api
+  }),
+  Components({
+    resolvers: [ElementPlusResolver()] // 解析组件
+  })
+]
+```
