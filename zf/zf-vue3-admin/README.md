@@ -148,7 +148,7 @@ plugins: [
 import 'virtual:uno.css'
 ```
 
-### 样式清除
+### 清除默认样式
 
 `pnpm i normalize.css`
 
@@ -171,4 +171,41 @@ plugins: [
     resolvers: [ElementPlusResolver()] // 解析组件
   })
 ]
+```
+
+### Element Plus 组件挂载实例
+
+`/plugins/element.ts` 文件
+
+```ts
+import type { App } from "vue"
+import { ElMessage, ElNotification, ElMessageBox } from "element-plus"
+
+export default (app: App) => {
+  app.config.globalProperties.$message = ElMessage
+  
+  app.config.globalProperties.$notify = ElNotification
+
+  app.config.globalProperties.$confirm = ElMessageBox.confirm
+  app.config.globalProperties.$alert = ElMessageBox.alert
+  app.config.globalProperties.$prompt = ElMessageBox.prompt
+}
+```
+
+`main.ts` 文件
+
+```ts
+import elementPlugin from "@/plugins/element"
+
+app.use(elementPlugin)
+```
+
+`vite.config.ts` 文件
+
+```ts
+import ElementPlus from "unplugin-element-plus/vite"
+
+plugins: [
+    ElementPlus({})
+  ]
 ```

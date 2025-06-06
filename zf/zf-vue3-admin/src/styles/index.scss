@@ -1,4 +1,4 @@
-@import "./variable.module.scss";
+@use "./variable.module.scss" as *; // @import 方法废弃，改用 @use
 
 // css 变量，可供 uno css 使用
 :root {

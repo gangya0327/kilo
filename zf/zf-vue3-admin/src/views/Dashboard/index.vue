@@ -1,19 +1,21 @@
 <template>
   <span>Dashboard</span>
 
-  <div class="container">我是一段文本
+  <div class="container">
     <div class="text">我是文本内容</div>
-    <el-button type="primary">按钮</el-button>
-    <el-input></el-input>
+    {{ a }}
+    <el-button type="primary" @click="handle">按钮</el-button>
   </div>
 </template>
 
-<style lang="scss" scoped>
-.container {
-  color: red;
+<script lang="ts" setup>
+const { proxy } = getCurrentInstance()!
 
-  .text {
-    color: blue;
-  }
+const a = ref(123)
+const handle = () => {
+  console.log('proxy :>> ', proxy);
+  proxy?.$message.success('测试按钮')
 }
-</style>
+</script>
+
+<style lang="scss" scoped></style>
