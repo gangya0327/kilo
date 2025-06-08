@@ -41,7 +41,7 @@
     }
 
     .app-main {
-      --at-apply: bg-cyan;
+      // --at-apply: bg-cyan;
       min-height: calc(100vh - var(--navbar-height) - var(--tags-View-height));
     }
   }
