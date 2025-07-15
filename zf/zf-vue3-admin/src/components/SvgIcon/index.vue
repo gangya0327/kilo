@@ -13,9 +13,10 @@ import { Icon as IconifyIcon } from '@iconify/vue'
 
 const isExt = computed(() => isExternal(iconName))
 
-const { iconName, customClass } = defineProps<{ iconName: string; customClass: string }>()
-const svgClass = computed(() => { customClass ? `icon ${customClass}` : 'icon' })
+const { iconName = '', customClass = '' } = defineProps<{ iconName: string; customClass: string }>()
 
+
+const svgClass = computed(() => { customClass ? `icon ${customClass}` : 'icon' })
 
 const styleExternalIcon = computed(() => ({
   mask: `url(${iconName}) no-repeat 50% 50%`,
