@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{text}}</h1>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        text: 'hello world',
+      },
+      render(h) {
+        return h('div', { class: 'box' },
+          [
+            h('h1', null, '你好 ' + this.text),
+            h('p', null, 'vue 2.0')
+          ]
+        )
+      }
+    })
+  </script>
+</body>
+
+</html>

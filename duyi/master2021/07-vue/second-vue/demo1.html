@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{text}}</h1>
+    <ul>
+      <li v-for="(item,index) in products">
+        商品名称：{{ item.name }}
+        <button @click="changeStock(item, item.stock-1)">-</button>
+        库存：{{ item.stock }}
+        <button @click="item.stock++">+</button>
+        <button @click="remove(index)">删除</button>
+      </li>
+    </ul>
+    <p> 总库存：{{total}}</p>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        text: '商品管理系统',
+        products: [
+          { name: 'iphone', stock: 19 },
+          { name: 'xiaomi', stock: 3 },
+          { name: 'huawei', stock: 5 },
+        ]
+      },
+      computed: {
+        total() {
+          return this.products.reduce((a, b) => a + b.stock, 0)
+        }
+      },
+      methods: {
+        changeStock(item, stock) {
+          if (stock < 0) {
+            stock = 0
+          }
+          item.stock = stock
+        },
+        remove(index) {
+          this.products.splice(index, 1)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
