@@ -1,18 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Avatar
+      url="https://sns-webpic-qc.xhscdn.com/202512081713/e11682928b19ac989dc49f68a7ec1b3a/1040g00831kr2mded2u1g5pu41nuingh1gd0jvpg!nd_prv_wlteh_webp_3"
+      :size="160" />
+
+    <MyIcon icon="mdi:home"></MyIcon>
+    <MyIcon icon="ant-design:aliwangwang-filled"></MyIcon>
+    <MyIcon icon="material-symbols:in-home-mode-rounded"></MyIcon>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Avatar from './components/Avatar.vue'
+import MyIcon from './components/MyIcon.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: { Avatar, MyIcon }
 }
 </script>
 
