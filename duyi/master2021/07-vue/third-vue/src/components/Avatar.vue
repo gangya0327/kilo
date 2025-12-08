@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <img class="avatar-img" :src="url" alt="" :width="size" :height="size">
-  </div>
+  <img class="avatar-img" :src="url" alt="" :width="size" :height="size">
 </template>
 
 <script>
@@ -23,6 +21,6 @@ export default {
 .avatar-img {
   border-radius: 50%;
   object-fit: cover;
-  display: block;
+  /* display: block; */
 }
 </style>
