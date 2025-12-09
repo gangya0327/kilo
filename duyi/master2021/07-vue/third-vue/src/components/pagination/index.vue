@@ -25,9 +25,10 @@ export default {
       type: Number,
       default: 10,
     },
+    // 可见页码数量
     visibleNumber: {
       type: Number,
-      default: 10,
+      default: 5,
     },
   },
   computed: {

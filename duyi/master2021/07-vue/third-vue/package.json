@@ -9,6 +9,7 @@
   "dependencies": {
     "@iconify/iconify": "^3.1.1",
     "@iconify/vue2": "^2.1.0",
+    "@vue/cli-service-global": "^4.5.19",
     "core-js": "^3.8.3",
     "vue": "^2.6.14"
   },
