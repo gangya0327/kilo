@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <!-- <Avatar
-      url="https://sns-webpic-qc.xhscdn.com/202512081713/e11682928b19ac989dc49f68a7ec1b3a/1040g00831kr2mded2u1g5pu41nuingh1gd0jvpg!nd_prv_wlteh_webp_3"
-      :size="120" /> -->
+    <Avatar
+      url="https://cdnfile.sspai.com/2025/12/05/039243279ce2b2dc867990073e67e8d1.jpg?imageView2/2/format/webp?imageMogr2/auto-orient/quality/90/ignore-error/1"
+      :size="120" />
+    <Avatar url="https://image.woshipm.com/2023/08/11/038990a6-380f-11ee-8f7d-00163e0b5ff3.jpg"
+      :size="120" />
 
     <icon icon="mdi:home"></icon>
     <icon icon="ant-design:aliwangwang-filled"></icon>
@@ -11,18 +13,21 @@
     <pagination :current="current" :total="total" @pageChange="handlePageChange" />
 
     <empty-test></empty-test>
+    
+    <image-loader-test></image-loader-test>
   </div>
 </template>
 
 <script>
-import Avatar from './components/Avatar.vue'
+import Avatar from './components/avatar/index.vue'
 import Icon from './components/icon/index.vue'
 import Pagination from './components/pagination/index.vue'
 import EmptyTest from './components/empty/test.vue'
+import ImageLoaderTest from './components/image-loader/test.vue'
 
 export default {
   name: 'App',
-  components: { Avatar, Icon, Pagination, EmptyTest },
+  components: { Avatar, Icon, Pagination, EmptyTest, ImageLoaderTest },
   data() {
     return { current: 4, total: 83 }
   },

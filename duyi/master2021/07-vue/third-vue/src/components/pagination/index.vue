@@ -69,7 +69,8 @@ export default {
 
 .pagination-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  width: 300px;
   margin: 20px 0;
 
   a {

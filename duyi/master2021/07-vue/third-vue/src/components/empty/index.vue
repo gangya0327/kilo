@@ -1,6 +1,6 @@
 <template>
   <div class="empty-container">
-    <icon  icon="mingcute:empty-box-fill" size="50"></icon>
+    <icon  icon="mingcute:empty-box-fill" :size="50"></icon>
     <p>{{ text }}</p>
   </div>
 </template>
