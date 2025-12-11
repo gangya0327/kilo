@@ -1,5 +1,5 @@
 <template>
-  <ul class="container">
+  <ul class="contact-container">
     <li>
       <a href="">
         <Icon class="icon" icon="mdi:qqchat" :size="20"></Icon>
@@ -51,7 +51,7 @@ export default {
 <style lang="less" scoped>
 @import '@/styles/variables.less';
 
-.container {
+.contact-container {
   list-style: none;
   padding: 20px;
   margin: 0;
@@ -74,10 +74,9 @@ export default {
     a {
       display: flex;
       align-items: center;
+      font-size: 14px;
 
       .icon {
-        font-size: 26px;
-        width: 36px;
         margin-right: 8px;
       }
     }

@@ -21,6 +21,6 @@ export default {
 .avatar-img {
   border-radius: 50%;
   object-fit: cover;
-  /* display: block; */
+  display: block;
 }
 </style>

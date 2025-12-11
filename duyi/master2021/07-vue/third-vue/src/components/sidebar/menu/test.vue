@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div class="menu-box">
     <contact></contact>
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.box {
+.menu-box {
   width: 400px;
   height: 300px;
   background: #313131;

@@ -1,5 +1,5 @@
 <template>
-  <nav class="container">
+  <nav class="menu-container">
     <a v-for="item in menus" :key="item.link" :href="item.link" :class="{ selected: isSelected(item) }">
       <icon :icon="item.icon" :size="28"></icon>
       <span> {{ item.title }} </span>
@@ -33,16 +33,13 @@ export default {
       }
     }
   },
-  mounted() {
-    console.log(location);
-  }
 }
 </script>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';
 
-.container {
+.menu-container {
   color: @gray;
   margin: 24px 0;
   width: 100%;

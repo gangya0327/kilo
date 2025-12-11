@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div class="image-loader-box">
     <image-loader :origin="imgOrigin" :thumbnail="imgThumbnail"></image-loader>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.box {
+.image-loader-box {
   width: 500px;
   height: 280px;
 }

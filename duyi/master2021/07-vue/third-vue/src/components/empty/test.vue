@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div class="empty-box">
     <empty></empty>
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style scoped>
-.box {
+.empty-box {
   margin-left: 50px;
   width: 160px;
   height: 160px;
