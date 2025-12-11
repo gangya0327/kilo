@@ -2,9 +2,7 @@
   <ul class="container">
     <li>
       <a href="">
-        <div class="icon">
-          <Icon icon="mdi:qqchat" size="26"></Icon>
-        </div>
+        <Icon class="icon" icon="mdi:qqchat" :size="20"></Icon>
         <span>18768105813</span>
       </a>
       <div class="pop">
@@ -13,9 +11,7 @@
     </li>
     <li>
       <a href="">
-        <div class="icon">
-          <Icon icon="ri:taobao-fill"></Icon>
-        </div>
+        <Icon class="icon" icon="ri:taobao-fill" :size="20"></Icon>
         <span>15025988324</span>
       </a>
       <div class="pop">
@@ -24,9 +20,7 @@
     </li>
     <li>
       <a href="">
-        <div class="icon">
-          <Icon icon="ri:firefox-fill"></Icon>
-        </div>
+        <Icon class="icon" icon="ri:firefox-fill" :size="20"></Icon>
         <span>18058701249</span>
       </a>
       <div class="pop">
@@ -84,6 +78,7 @@ export default {
       .icon {
         font-size: 26px;
         width: 36px;
+        margin-right: 8px;
       }
     }
 

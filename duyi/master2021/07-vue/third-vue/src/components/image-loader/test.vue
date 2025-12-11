@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <image-loader :src="imgOrigin" :thumbnail="imgThumbnail"></image-loader>
+    <image-loader :origin="imgOrigin" :thumbnail="imgThumbnail"></image-loader>
   </div>
 </template>
 
@@ -24,6 +24,5 @@ export default {
 .box {
   width: 500px;
   height: 280px;
-  border: 1px solid #ccc;
 }
 </style>
