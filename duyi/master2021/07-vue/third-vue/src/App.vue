@@ -9,7 +9,7 @@
     <icon icon="ant-design:aliwangwang-filled"></icon>
     <icon icon="material-symbols:in-home-mode-rounded"></icon>
 
-    <pagination :current="current" :total="total" @pageChange="handlePageChange" />
+    <pagination-test />
 
     <empty-test></empty-test>
 
@@ -17,32 +17,31 @@
 
     <contact-test></contact-test>
 
-    <menu-test></menu-test> -->
+    <menu-test></menu-test>
 
     <sidebar></sidebar>
+
+    <message-test></message-test> -->
+
+    <layout-test></layout-test>
   </div>
 </template>
 
 <script>
 import Avatar from './components/avatar/index.vue'
 import Icon from './components/icon/index.vue'
-import Pagination from './components/pagination/index.vue'
+import PaginationTest from './components/pagination/test.vue'
 import EmptyTest from './components/empty/test.vue'
 import ImageLoaderTest from './components/image-loader/test.vue'
 import ContactTest from './components/sidebar/contact/test.vue'
 import MenuTest from './components/sidebar/menu/test.vue'
 import Sidebar from './components/sidebar/index.vue'
+import MessageTest from './components/message/test.vue'
+import LayoutTest from './components/layout/test.vue'
 
 export default {
   name: 'App',
-  components: { Avatar, Icon, Pagination, EmptyTest, ImageLoaderTest, ContactTest, MenuTest, Sidebar },
-  data() {
-    return { current: 4, total: 83 }
-  },
-  methods: {
-    handlePageChange(newPage) {
-      this.current = newPage
-    }
-  }
+  components: { Avatar, Icon, PaginationTest, EmptyTest, ImageLoaderTest, ContactTest, MenuTest, Sidebar, MessageTest, LayoutTest },
+
 }
 </script>
