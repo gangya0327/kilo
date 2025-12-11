@@ -1,30 +1,30 @@
 <template>
   <ul class="contact-container">
     <li>
-      <a href="">
-        <Icon class="icon" icon="mdi:qqchat" :size="20"></Icon>
+      <a>
+        <Icon class="icon" icon="ri:firefox-fill" :size="20"></Icon>
         <span>18768105813</span>
+      </a>
+      <div class="pop">
+        <img :src="imgPop3" alt="">
+      </div>
+    </li>
+    <li>
+      <a href="https://www.qq.com" target="_blank">
+        <Icon class="icon" icon="mdi:qqchat" :size="20"></Icon>
+        <span>https://www.qq.com</span>
       </a>
       <div class="pop">
         <img :src="imgPop1" alt="">
       </div>
     </li>
     <li>
-      <a href="">
+      <a href="https://taobao.com" target="_blank">
         <Icon class="icon" icon="ri:taobao-fill" :size="20"></Icon>
-        <span>15025988324</span>
+        <span>https://taobao.com</span>
       </a>
       <div class="pop">
         <img :src="imgPop2" alt="">
-      </div>
-    </li>
-    <li>
-      <a href="">
-        <Icon class="icon" icon="ri:firefox-fill" :size="20"></Icon>
-        <span>18058701249</span>
-      </a>
-      <div class="pop">
-        <img :src="imgPop3" alt="">
       </div>
     </li>
   </ul>

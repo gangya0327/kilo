@@ -1,7 +1,7 @@
 <template>
   <nav class="menu-container">
     <a v-for="item in menus" :key="item.link" :href="item.link" :class="{ selected: isSelected(item) }">
-      <icon :icon="item.icon" :size="28"></icon>
+      <icon :icon="item.icon" :size="20"></icon>
       <span> {{ item.title }} </span>
     </a>
   </nav>
@@ -59,8 +59,8 @@ export default {
     }
 
     span {
-      margin-left: 10px;
-      font-size: 20px;
+      margin-left: 20px;
+      font-size: 16px;
     }
   }
 }

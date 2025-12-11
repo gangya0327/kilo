@@ -1,29 +1,18 @@
 <template>
   <div class="layout-container">
-    <nav class="nav">
+    <div class="left">
       <slot name="left"></slot>
-    </nav>
+    </div>
 
     <main class="main">
       <slot></slot>
     </main>
 
-    <aside class="aside">
+    <div class="right">
       <slot name="right"></slot>
-    </aside>
+    </div>
   </div>
 </template>
-
-<script>
-export default {
-  props: {
-    text: {
-      type: String,
-      default: '无数据'
-    }
-  }
-}
-</script>
 
 <style lang="less" scoped>
 .layout-container {
@@ -31,8 +20,8 @@ export default {
   height: 100%;
   display: flex;
 
-  .nav,
-  .aside {
+  .left,
+  .right {
     flex: 0 0 auto;
     overflow: hidden;
   }

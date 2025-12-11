@@ -19,11 +19,21 @@
 
     <menu-test></menu-test>
 
-    <sidebar></sidebar>
+    <message-test></message-test>
 
-    <message-test></message-test> -->
+    <layout-test></layout-test> -->
 
-    <layout-test></layout-test>
+    <layout>
+      <template #left>
+        <div class="left">
+          <sidebar></sidebar>
+        </div>
+      </template>
+
+      <div>
+        中间主区域
+      </div>
+    </layout>
   </div>
 </template>
 
@@ -35,13 +45,29 @@ import EmptyTest from './components/empty/test.vue'
 import ImageLoaderTest from './components/image-loader/test.vue'
 import ContactTest from './components/sidebar/contact/test.vue'
 import MenuTest from './components/sidebar/menu/test.vue'
-import Sidebar from './components/sidebar/index.vue'
 import MessageTest from './components/message/test.vue'
 import LayoutTest from './components/layout/test.vue'
 
+import Sidebar from './components/sidebar/index.vue'
+import Layout from './components/layout/index.vue'
+
 export default {
   name: 'App',
-  components: { Avatar, Icon, PaginationTest, EmptyTest, ImageLoaderTest, ContactTest, MenuTest, Sidebar, MessageTest, LayoutTest },
+  components: { Avatar, Icon, PaginationTest, EmptyTest, ImageLoaderTest, ContactTest, MenuTest, Sidebar, MessageTest, LayoutTest, Layout },
 
 }
 </script>
+
+<style lang="less" scoped>
+@import '@/styles/mixin.less';
+@import '@/styles/variables.less';
+
+#app {
+  .self-full();
+
+  .left {
+    width: 250px;
+    height: 100%;
+  }
+}
+</style>

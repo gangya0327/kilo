@@ -27,7 +27,7 @@ export default {
 @import '@/styles/variables.less';
 
 .sidebar-container {
-  width: 300px;
+  width: 100%;
   height: 100%;
   background: @dark;
   padding: 20px 0;
@@ -40,10 +40,10 @@ export default {
   }
 
   .title {
-    font-size: 1.8em;
+    font-size: 1.4em;
     color: #fff;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
   .footer {
