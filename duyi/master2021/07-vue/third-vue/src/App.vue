@@ -31,7 +31,7 @@
       </template>
 
       <div>
-        中间主区域
+        <router-view></router-view>
       </div>
     </layout>
   </div>

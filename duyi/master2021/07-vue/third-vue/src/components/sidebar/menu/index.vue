@@ -16,11 +16,11 @@ export default {
   data() {
     return {
       menus: [
-        { link: '/', title: '首页', icon: 'mdi:home' },
-        { link: '/blog', title: '文章', icon: 'ri:blogger-fill', startsWith: true },
-        { link: '/about', title: '关于', icon: 'ix:about-filled' },
-        { link: '/project', title: ' 项目', icon: 'fluent:projection-screen-16-filled' },
-        { link: '/message', title: ' 留言', icon: 'material-symbols:chat-rounded' },
+        { link: '/#/', title: '首页', icon: 'mdi:home' },
+        { link: '/#/blog', title: '文章', icon: 'ri:blogger-fill', startsWith: true },
+        { link: '/#/about', title: '关于', icon: 'ix:about-filled' },
+        { link: '/#/project', title: ' 项目', icon: 'fluent:projection-screen-16-filled' },
+        { link: '/#/message', title: ' 留言', icon: 'material-symbols:chat-rounded' },
       ]
     }
   },
