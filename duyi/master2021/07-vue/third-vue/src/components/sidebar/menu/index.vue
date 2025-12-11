@@ -1,9 +1,9 @@
 <template>
   <nav class="menu-container">
-    <a v-for="item in menus" :key="item.link" :href="item.link" :class="{ selected: isSelected(item) }">
+    <router-link v-for="item in menus" :key="item.link" :to="item.link" :exact="item.exact" active-class="select">
       <icon :icon="item.icon" :size="20"></icon>
       <span> {{ item.title }} </span>
-    </a>
+    </router-link>
   </nav>
 </template>
 
@@ -16,21 +16,12 @@ export default {
   data() {
     return {
       menus: [
-        { link: '/#/', title: '首页', icon: 'mdi:home' },
-        { link: '/#/blog', title: '文章', icon: 'ri:blogger-fill', startsWith: true },
-        { link: '/#/about', title: '关于', icon: 'ix:about-filled' },
-        { link: '/#/project', title: ' 项目', icon: 'fluent:projection-screen-16-filled' },
-        { link: '/#/message', title: ' 留言', icon: 'material-symbols:chat-rounded' },
+        { link: '/', title: '首页', icon: 'mdi:home', exact: true },
+        { link: '/blog', title: '文章', icon: 'ri:blogger-fill', startsWith: true, exact: false },
+        { link: '/about', title: '关于', icon: 'ix:about-filled', exact: true },
+        { link: '/project', title: ' 项目', icon: 'fluent:projection-screen-16-filled', exact: true },
+        { link: '/message', title: ' 留言', icon: 'material-symbols:chat-rounded', exact: true },
       ]
-    }
-  },
-  methods: {
-    isSelected(item) {
-      if (item.startsWith) {
-        return location.pathname.toLocaleLowerCase().startsWith(item.link)
-      } else {
-        return location.pathname.toLocaleLowerCase() === item.link
-      }
     }
   },
 }
@@ -49,12 +40,13 @@ export default {
     display: flex;
     align-items: center;
     height: 45px;
+    cursor: pointer;
 
     &:hover {
       color: #fff;
     }
 
-    &.selected {
+    &.select {
       background: #555;
     }
 
