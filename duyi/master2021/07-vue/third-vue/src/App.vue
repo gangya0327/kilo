@@ -13,8 +13,10 @@
     <pagination :current="current" :total="total" @pageChange="handlePageChange" />
 
     <empty-test></empty-test>
-    
+
     <image-loader-test></image-loader-test>
+
+    <contact-test></contact-test>
   </div>
 </template>
 
@@ -24,10 +26,11 @@ import Icon from './components/icon/index.vue'
 import Pagination from './components/pagination/index.vue'
 import EmptyTest from './components/empty/test.vue'
 import ImageLoaderTest from './components/image-loader/test.vue'
+import ContactTest from './components/contact/test.vue'
 
 export default {
   name: 'App',
-  components: { Avatar, Icon, Pagination, EmptyTest, ImageLoaderTest },
+  components: { Avatar, Icon, Pagination, EmptyTest, ImageLoaderTest, ContactTest },
   data() {
     return { current: 4, total: 83 }
   },
