@@ -1,8 +1,16 @@
 <template>
-  <div class="home-container" ref="container">
-    <ul class="carousel-container" :style="{ marginTop }">
-      <li v-for="item in banners" :key="item.id">
-        <carousel-item></carousel-item>
+  <div class="home-container" ref="container" @wheel="handleWheel">
+    <ul
+      class="carousel-container"
+      :style="{ marginTop }"
+      @transitionend="handleTransitionend"
+    >
+      <li v-for="(item, index) in banners" :key="index">
+        <carousel-item
+          :carousel="item"
+          :index="index"
+          :activeIndex="activeIndex"
+        ></carousel-item>
       </li>
     </ul>
 
@@ -46,6 +54,7 @@ export default {
       banners: [],
       activeIndex: 0, // 轮播图索引
       containerHeight: 0, // 轮播图容器高度
+      isSwitching: false, // 是否正在切换轮播图
     }
   },
   computed: {
@@ -56,11 +65,30 @@ export default {
   async mounted() {
     this.banners = await getBanner()
     this.containerHeight = this.$refs.container.offsetHeight
-    console.log("this.containerHeight :>> ", this.containerHeight)
+    window.addEventListener("resize", this.handleResize)
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.handleResize)
   },
   methods: {
     switchTo(index) {
       this.activeIndex = index
+    },
+    handleWheel(e) {
+      if (this.isSwitching) return
+      if (e.deltaY > 5 && this.activeIndex < this.banners.length - 1) {
+        this.isSwitching = true
+        this.activeIndex++
+      } else if (e.deltaY < -5 && this.activeIndex > 0) {
+        this.isSwitching = true
+        this.activeIndex--
+      }
+    },
+    handleTransitionend() {
+      this.isSwitching = false
+    },
+    handleResize() {
+      this.containerHeight = this.$refs.container.offsetHeight
     },
   },
 }
@@ -79,6 +107,7 @@ export default {
   .carousel-container {
     width: 100%;
     height: 100%;
+    transition: 0.3s ease-in-out;
 
     li {
       width: 100%;
