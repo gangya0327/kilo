@@ -1,4 +1,4 @@
-import Mock from 'mockjs'
-Mock.setup({ timeout: 500 })
+import Mock from "mockjs"
+Mock.setup({ timeout: 300 })
 
-import './banner'
+import "./banner"
