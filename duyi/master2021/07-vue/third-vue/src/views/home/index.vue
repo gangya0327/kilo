@@ -6,9 +6,14 @@
 </template>
 
 <script>
-import { showMessage } from '@/utils';
+import { test } from '@/api/test';
 
 export default {
+  mounted() {
+    test().then(res => {
+      // console.log('res :>> ', res);
+    })
+  },
   methods: {
     handleClick() {
       this.$showMessage({

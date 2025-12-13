@@ -11,17 +11,18 @@ import styles from '@/styles/showMessage.module.less'
  */
 export default function showMessage(options = {}) {
   const { content, type = 'primary', duration = 2000 } = options
-  let container = options.container
+  let container = options.container || document.body
   // 创建元素
   const div = document.createElement('div')
-  const icon = getComponentRootDom(Icon, { icon: 'mdi:information-box' })
+  const icon = getComponentRootDom(Icon, { icon: 'gridicons:notice', size: 20 })
   // 添加内容
   div.innerHTML = `${icon.outerHTML}<div class="${styles.text}">${content}</div>`
   // 添加样式
   div.className = styles.message + ' ' + styles['message-' + type]
   // 添加到容器中
   if (!container) {
-    container = document.body
+    if (getComputedStyle(container).position === 'static')
+      container.style.position = 'relative'
   }
   container.appendChild(div)
   // 强行渲染一次，使样式生效

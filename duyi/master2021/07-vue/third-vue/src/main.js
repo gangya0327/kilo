@@ -4,11 +4,18 @@ import App from './App.vue'
 import "./styles/global.less"
 
 Vue.config.productionTip = false
+// 开发环境强制开启 Devtools
+if (process.env.NODE_ENV === 'development') {
+  Vue.config.devtools = true
+  console.log('Vue Devtools 已启用')
+}
 
 import router from './router'
 
 import { showMessage } from '@/utils';
 Vue.prototype.$showMessage = showMessage;
+
+import './mock'
 
 new Vue({
   router,
