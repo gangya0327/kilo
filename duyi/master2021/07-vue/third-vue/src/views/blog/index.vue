@@ -7,6 +7,7 @@
 
 <script>
 import RightList from "./components/RightList.vue"
+import { getBlog, getBlogCategory } from "@/api/blog"
 
 export default {
   components: { RightList },
@@ -36,7 +37,15 @@ export default {
       ],
     }
   },
+  created() {
+    getBlog({ page: 1, limit: 10 }).then((res) => {
+      console.log("res :>> ", res)
+    })
+  },
   methods: {
+    // async fetchData() {
+    //   return getBlog({ page: 1, limit: 10 })
+    // },
     handleSelect(item) {
       console.log(item)
     },
