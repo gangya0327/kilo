@@ -10,7 +10,7 @@
       :style="{ marginTop }"
       @transitionend="handleTransitionend"
     >
-      <li v-for="(item, index) in banners" :key="index">
+      <li v-for="(item, index) in data" :key="index">
         <carousel-item
           :carousel="item"
           :index="index"
@@ -27,7 +27,7 @@
       <Icon icon="material-symbols:keyboard-arrow-up-rounded" :size="50"></Icon>
     </div>
     <div
-      v-show="activeIndex < banners.length - 1"
+      v-show="activeIndex < data.length - 1"
       class="icon down"
       @click="switchTo(activeIndex + 1)"
     >
@@ -38,7 +38,7 @@
     </div>
     <ul class="indicator">
       <li
-        v-for="(item, index) in banners"
+        v-for="(item, index) in data"
         :key="item.id"
         :class="{ active: index === activeIndex }"
         @click="switchTo(index)"
@@ -51,16 +51,16 @@
 import { getBanner } from "@/api/banner"
 import CarouselItem from "./components/CarouselItem.vue"
 import Icon from "@/components/icon"
+import fetchData from "@/mixins/fetchData"
 
 export default {
   components: { CarouselItem, Icon },
+  mixins: [fetchData([])],
   data() {
     return {
-      banners: [],
       activeIndex: 0, // 轮播图索引
       containerHeight: 0, // 轮播图容器高度
       isSwitching: false, // 是否正在切换轮播图
-      isLoading: true,
     }
   },
   computed: {
@@ -69,8 +69,6 @@ export default {
     },
   },
   async mounted() {
-    this.banners = await getBanner()
-    this.isLoading = false
     this.containerHeight = this.$refs.container.offsetHeight
     window.addEventListener("resize", this.handleResize)
   },
@@ -78,12 +76,15 @@ export default {
     window.removeEventListener("resize", this.handleResize)
   },
   methods: {
+    async fetchData() {
+      return await getBanner()
+    },
     switchTo(index) {
       this.activeIndex = index
     },
     handleWheel(e) {
       if (this.isSwitching) return
-      if (e.deltaY > 5 && this.activeIndex < this.banners.length - 1) {
+      if (e.deltaY > 5 && this.activeIndex < this.data.length - 1) {
         this.isSwitching = true
         this.activeIndex++
       } else if (e.deltaY < -5 && this.activeIndex > 0) {

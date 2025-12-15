@@ -25,11 +25,8 @@ export default {
       }
     }
   },
-  inserted() {
-    console.log("inserted")
-  },
+  inserted() {},
   update(el, binding) {
-    console.log("update")
     if (!binding.value) {
       const currentImg = getLoadingImage(el)
       currentImg.remove()
