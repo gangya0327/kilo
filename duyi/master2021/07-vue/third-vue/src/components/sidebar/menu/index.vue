@@ -1,6 +1,12 @@
 <template>
   <nav class="menu-container">
-    <router-link v-for="item in menus" :key="item.link" :to="item.link" :exact="item.exact" active-class="select">
+    <router-link
+      v-for="item in menus"
+      :key="item.link"
+      :to="item.link"
+      :exact="item.exact"
+      active-class="select"
+    >
       <icon :icon="item.icon" :size="20"></icon>
       <span> {{ item.title }} </span>
     </router-link>
@@ -8,27 +14,42 @@
 </template>
 
 <script>
-import Icon from '@/components/icon/index.vue'
-
+import Icon from "@/components/icon/index.vue"
 
 export default {
   components: { Icon },
   data() {
     return {
       menus: [
-        { link: '/', title: '首页', icon: 'mdi:home', exact: true },
-        { link: '/blog', title: '文章', icon: 'ri:blogger-fill', startsWith: true, exact: false },
-        { link: '/about', title: '关于', icon: 'ix:about-filled', exact: true },
-        { link: '/project', title: ' 项目', icon: 'fluent:projection-screen-16-filled', exact: true },
-        { link: '/message', title: ' 留言', icon: 'material-symbols:chat-rounded', exact: true },
-      ]
+        { link: "/", title: "首页", icon: "mdi:home", exact: true },
+        {
+          link: "/blog",
+          title: "文章",
+          icon: "ri:blogger-fill",
+          startsWith: true,
+          exact: false,
+        },
+        { link: "/about", title: "关于", icon: "ix:about-filled", exact: true },
+        {
+          link: "/project",
+          title: " 项目",
+          icon: "fluent:projection-screen-16-filled",
+          exact: true,
+        },
+        {
+          link: "/message",
+          title: " 留言",
+          icon: "material-symbols:chat-rounded",
+          exact: true,
+        },
+      ],
     }
   },
 }
 </script>
 
 <style lang="less" scoped>
-@import '@/styles/variables.less';
+@import "@/styles/variables.less";
 
 .menu-container {
   color: @gray;

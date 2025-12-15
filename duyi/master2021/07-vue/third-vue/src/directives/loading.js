@@ -2,7 +2,7 @@ import imgLoading from "@/assets/loading.svg"
 import styles from "@/styles/loading.module.less"
 
 function getLoadingImage(el) {
-  return el.querySelector('img[data-role="loading')
+  return el.querySelector('img[data-role="loading"]')
 }
 
 function createLoadingImage() {
@@ -27,8 +27,15 @@ export default {
   },
   inserted() {},
   update(el, binding) {
-    if (!binding.value) {
-      const currentImg = getLoadingImage(el)
+    const currentImg = getLoadingImage(el)
+    if (binding.value) {
+      if (currentImg) {
+        currentImg.remove()
+      } else {
+        const img = createLoadingImage()
+        el.appendChild(img)
+      }
+    } else {
       currentImg.remove()
     }
   },

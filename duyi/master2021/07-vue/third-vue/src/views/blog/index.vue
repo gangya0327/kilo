@@ -1,16 +1,22 @@
 <template>
-  <div>
-    <h2>blog</h2>
-    <right-list :list="list" @select="handleSelect"></right-list>
-  </div>
+  <layout>
+    <blog-list></blog-list>
+    <template #right>
+      <blog-category></blog-category>
+    </template>
+  </layout>
+  <!-- <right-list :list="list" @select="handleSelect"></right-list> -->
 </template>
 
 <script>
-import RightList from "./components/RightList.vue"
+// import RightList from "./components/RightList.vue"
+import Layout from "@/components/layout/index.vue"
 import { getBlog, getBlogCategory } from "@/api/blog"
+import BlogList from "./components/BlogList.vue"
+import BlogCategory from "./components/BlogCategory.vue"
 
 export default {
-  components: { RightList },
+  components: { Layout, BlogList, BlogCategory },
   data() {
     return {
       list: [

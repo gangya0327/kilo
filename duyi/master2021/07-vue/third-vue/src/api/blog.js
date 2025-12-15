@@ -1,9 +1,9 @@
 import request from "@/utils/request"
 
 // 获取博客列表
-export async function getBlog({ page = 1, limit = 10, category = -1 }) {
+export async function getBlog({ page = 1, limit = 10, categoryId = -1 }) {
   return await request.get("/api/blog", {
-    params: { page, limit, category },
+    params: { page, limit, categoryId },
   })
 }
 

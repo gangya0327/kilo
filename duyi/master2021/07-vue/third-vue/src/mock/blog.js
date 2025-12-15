@@ -5,7 +5,6 @@ import qs from "querystring"
 // 文章列表
 Mock.mock(/^\/api\/blog(\?.+)?$/, "get", function (options) {
   const query = qs.parse(options.url)
-  console.log("query :>> ", query)
   return Mock.mock({
     code: 0,
     msg: "",
@@ -14,15 +13,18 @@ Mock.mock(/^\/api\/blog(\?.+)?$/, "get", function (options) {
       [`rows|${query.limit || 10}`]: [
         {
           id: "@guid",
-          title: "@ctitle",
+          title: "@ctitle(1, 50)",
           description: "@cparagraph(1,10)",
           category: {
             "id|1-10": 0,
             name: "分类@id",
           },
           "scanNumber|0-300": 0,
-          "contentNumber|0-300": 30,
-          thumb: Mock.Random.image("400x280", "#4A7", "#fff", "文章图片"),
+          "commentNumber|0-300": 30,
+          "thumb|1": [
+            Mock.Random.image("400x280", "#4A7", "#fff", "文章图片"),
+            null,
+          ],
           createDate: "@date('T')",
         },
       ],

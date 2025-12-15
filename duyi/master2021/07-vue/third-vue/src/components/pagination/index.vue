@@ -1,12 +1,29 @@
 <template>
   <div class="pagination-container" v-if="pageNum > 1">
-    <a :class="{ disabled: current === 1 }" @click="handleClick(1)">|&lt;&lt;</a>
-    <a :class="{ disabled: current === 1 }" @click="handleClick(current - 1)">&lt;&lt;</a>
+    <a :class="{ disabled: current === 1 }" @click="handleClick(1)"
+      >|&lt;&lt;</a
+    >
+    <a :class="{ disabled: current === 1 }" @click="handleClick(current - 1)"
+      >&lt;&lt;</a
+    >
 
-    <a v-for="n in numbers" :key="n" :class="{ active: current === n }">{{ n }}</a>
+    <a
+      v-for="n in numbers"
+      :key="n"
+      :class="{ active: current === n }"
+      @click="handleClick(n)"
+    >
+      {{ n }}
+    </a>
 
-    <a :class="{ disabled: current === pageNum }" @click="handleClick(current + 1)">&gt;&gt;</a>
-    <a :class="{ disabled: current === pageNum }" @click="handleClick(pageNum)">&gt;&gt;|</a>
+    <a
+      :class="{ disabled: current === pageNum }"
+      @click="handleClick(current + 1)"
+      >&gt;&gt;</a
+    >
+    <a :class="{ disabled: current === pageNum }" @click="handleClick(pageNum)"
+      >&gt;&gt;|</a
+    >
   </div>
 </template>
 
@@ -52,20 +69,21 @@ export default {
         numbers.push(i)
       }
       return numbers
-    }
+    },
   },
   methods: {
     handleClick(newPage) {
+      console.log("newPage :>> ", newPage)
       if (newPage < 1) newPage = 1
       if (newPage > this.pageNum) newPage = this.pageNum
-      this.$emit('pageChange', newPage)
-    }
-  }
+      this.$emit("pageChange", newPage)
+    },
+  },
 }
 </script>
 
 <style lang="less" scoped>
-@import '@/styles/variables.less';
+@import "@/styles/variables.less";
 
 .pagination-container {
   display: flex;
