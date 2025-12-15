@@ -1,5 +1,10 @@
 <template>
-  <div class="home-container" ref="container" @wheel="handleWheel">
+  <div
+    v-loading="isLoading"
+    class="home-container"
+    ref="container"
+    @wheel="handleWheel"
+  >
     <ul
       class="carousel-container"
       :style="{ marginTop }"
@@ -55,6 +60,7 @@ export default {
       activeIndex: 0, // 轮播图索引
       containerHeight: 0, // 轮播图容器高度
       isSwitching: false, // 是否正在切换轮播图
+      isLoading: true,
     }
   },
   computed: {
@@ -64,6 +70,7 @@ export default {
   },
   async mounted() {
     this.banners = await getBanner()
+    this.isLoading = false
     this.containerHeight = this.$refs.container.offsetHeight
     window.addEventListener("resize", this.handleResize)
   },

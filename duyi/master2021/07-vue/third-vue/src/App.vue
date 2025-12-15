@@ -21,7 +21,9 @@
 
     <message-test></message-test>
 
-    <layout-test></layout-test> -->
+    <layout-test></layout-test>
+
+    <loading-test></loading-test> -->
 
     <layout>
       <template #left>
@@ -36,29 +38,42 @@
 </template>
 
 <script>
-import Avatar from './components/avatar/index.vue'
-import Icon from './components/icon/index.vue'
-import PaginationTest from './components/pagination/test.vue'
-import EmptyTest from './components/empty/test.vue'
-import ImageLoaderTest from './components/image-loader/test.vue'
-import ContactTest from './components/sidebar/contact/test.vue'
-import MenuTest from './components/sidebar/menu/test.vue'
-import MessageTest from './components/message/test.vue'
-import LayoutTest from './components/layout/test.vue'
+import Avatar from "./components/avatar/index.vue"
+import Icon from "./components/icon/index.vue"
+import PaginationTest from "./components/pagination/test.vue"
+import EmptyTest from "./components/empty/test.vue"
+import ImageLoaderTest from "./components/image-loader/test.vue"
+import ContactTest from "./components/sidebar/contact/test.vue"
+import MenuTest from "./components/sidebar/menu/test.vue"
+import MessageTest from "./components/message/test.vue"
+import LayoutTest from "./components/layout/test.vue"
+import LoadingTest from "./components/loading/test.vue"
 
-import Sidebar from './components/sidebar/index.vue'
-import Layout from './components/layout/index.vue'
+import Sidebar from "./components/sidebar/index.vue"
+import Layout from "./components/layout/index.vue"
 
 export default {
-  name: 'App',
-  components: { Avatar, Icon, PaginationTest, EmptyTest, ImageLoaderTest, ContactTest, MenuTest, Sidebar, MessageTest, LayoutTest, Layout },
-
+  name: "App",
+  components: {
+    Avatar,
+    Icon,
+    PaginationTest,
+    EmptyTest,
+    ImageLoaderTest,
+    ContactTest,
+    MenuTest,
+    Sidebar,
+    MessageTest,
+    LayoutTest,
+    Layout,
+    LoadingTest,
+  },
 }
 </script>
 
 <style lang="less" scoped>
-@import '@/styles/mixin.less';
-@import '@/styles/variables.less';
+@import "@/styles/mixin.less";
+@import "@/styles/variables.less";
 
 #app {
   .self-full();
