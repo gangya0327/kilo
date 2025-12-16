@@ -1,31 +1,6 @@
 <template>
   <div class="blog-list-container" ref="container" v-loading="isLoading">
     <ul>
-      <!-- <li>
-        <div class="thumb">
-          <a href="">
-            <img
-              src="https://cdn.dribbble.com/userupload/45776499/file/a41d4c0878cf52c61219934324a17aed.jpg?resize=1500x1192&vertical=center"
-              alt=""
-            />
-          </a>
-        </div>
-        <div class="main">
-          <a href="">
-            <h2>测试标题</h2>
-          </a>
-          <div class="aside">
-            <span> 日期：2025 年 12 月 15 日 </span>
-            <span> 浏览量：158</span>
-            <span> 评论数：32</span>
-            <a href="/blog/category/8"> 分类 8</a>
-          </div>
-          <div class="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error,
-            architecto?
-          </div>
-        </div>
-      </li> -->
       <li v-for="(item, index) in data.rows" :key="index">
         <div v-if="item.thumb" class="thumb">
           <a href="">
@@ -59,7 +34,7 @@
 <script>
 import Pagination from "@/components/pagination/index.vue"
 import fetchData from "@/mixins/fetchData"
-import { getBlog } from "@/api/blog"
+import { getBlogList } from "@/api/blog"
 import { formatDate } from "@/utils"
 
 export default {
@@ -83,7 +58,7 @@ export default {
   },
   methods: {
     async fetchData() {
-      return await getBlog(this.routeInfo)
+      return await getBlogList(this.routeInfo)
     },
     formatDate,
     handlePageChange(newPage) {

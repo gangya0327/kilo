@@ -17,30 +17,20 @@ export default {
   bind(el, binding) {
     const currentImg = getLoadingImage(el)
     if (binding.value) {
-      if (currentImg) {
-        currentImg.remove()
-      } else {
+      if (!currentImg) {
         const img = createLoadingImage()
         el.appendChild(img)
       }
     }
   },
-  inserted() {},
+  // inserted() {},
   update(el, binding) {
     const currentImg = getLoadingImage(el)
-    if (binding.value) {
-      if (currentImg) {
-        currentImg.remove()
-      } else {
-        const img = createLoadingImage()
-        el.appendChild(img)
-      }
-    } else {
+    if (!currentImg && binding.value) {
+      const img = createLoadingImage()
+      el.appendChild(img)
+    } else if (currentImg && !binding.value) {
       currentImg.remove()
     }
   },
 }
-
-// export default function (el, binding) {
-//   console.log("ok", binding.value)
-// }

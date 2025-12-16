@@ -1,5 +1,4 @@
 import Mock from "mockjs"
-import { title } from "process"
 import qs from "querystring"
 
 // 文章列表
@@ -22,9 +21,11 @@ Mock.mock(/^\/api\/blog(\?.+)?$/, "get", function (options) {
           "scanNumber|0-300": 0,
           "commentNumber|0-300": 30,
           "thumb|1": [
-            Mock.Random.image("400x280", "#4A7", "#fff", "文章图片"),
-            null,
+            Mock.Random.image("400x280", "#4A7", "#fff", "文章封面"),
+            "",
           ],
+          // thumb:
+          //   '@pick(["", "http://dummyimage.com/400x280/4A7/fff&text=文章封面"])',
           createDate: "@date('T')",
         },
       ],
@@ -36,11 +37,11 @@ Mock.mock(/^\/api\/blog(\?.+)?$/, "get", function (options) {
 Mock.mock("/api/blogCategory", "get", {
   code: 0,
   msg: "",
-  "data|10-20": [
+  "data|2-4": [
     {
       "id|+1": 1,
       name: "分类@id",
-      "articleCount|0-30": 10,
+      "articleCount|0-30": 0,
       "order|+1": 1,
     },
   ],
