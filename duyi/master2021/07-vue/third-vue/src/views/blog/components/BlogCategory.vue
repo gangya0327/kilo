@@ -37,8 +37,6 @@ export default {
   },
   methods: {
     async fetchData() {
-      console.log(1313)
-
       return await getBlogCategory()
     },
     handleSelect(item) {
