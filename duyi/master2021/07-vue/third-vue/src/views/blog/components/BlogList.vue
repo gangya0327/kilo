@@ -119,6 +119,7 @@ export default {
       flex: 1 1 auto;
       h2 {
         margin: 0;
+        display: inline-block;
       }
     }
     .aside {

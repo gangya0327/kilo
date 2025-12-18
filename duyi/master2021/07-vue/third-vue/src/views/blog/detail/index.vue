@@ -1,7 +1,8 @@
 <template>
   <layout>
     <div class="main-container" v-loading="isLoading">
-      <blog-detail v-if="data" :blog="data"></blog-detail>
+      <!-- <blog-detail v-if="data" :blog="data"></blog-detail> -->
+      <blog-comment></blog-comment>
     </div>
     <template #right>
       <div class="right-container" v-loading="isLoading">
@@ -17,9 +18,10 @@ import { getBlog } from "@/api/blog"
 import Layout from "@/components/layout/index.vue"
 import BlogToc from "./components/BlogToc.vue"
 import BlogDetail from "./components/BlogDetail.vue"
+import BlogComment from "./components/BlogComment.vue"
 
 export default {
-  components: { Layout, BlogToc, BlogDetail },
+  components: { Layout, BlogToc, BlogDetail, BlogComment },
   mixins: [fetchData({})],
   methods: {
     async fetchData() {

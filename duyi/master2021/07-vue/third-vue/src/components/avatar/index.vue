@@ -1,19 +1,21 @@
 <template>
-  <img class="avatar-img" :src="url" alt="" :width="size" :height="size">
+  <img class="avatar-img" :src="url" alt="" :width="size" :height="size" />
 </template>
 
 <script>
+import defaultAvatar from "@/assets/default_avatar.png"
+
 export default {
   props: {
     url: {
       type: String,
-      required: true
+      default: defaultAvatar,
     },
     size: {
       type: Number,
-      default: 200
+      default: 200,
     },
-  }
+  },
 }
 </script>
 

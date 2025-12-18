@@ -60,6 +60,8 @@ export default {
   width: 300px;
   box-sizing: border-box;
   padding: 20px;
+  position: relative;
+  height: 100%;
 
   h2 {
     font-weight: bold;

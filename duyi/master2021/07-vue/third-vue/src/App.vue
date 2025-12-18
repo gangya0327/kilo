@@ -1,36 +1,38 @@
 <template>
   <div id="app">
-    <!-- <Avatar
-      url="https://cdnfile.sspai.com/2025/12/05/039243279ce2b2dc867990073e67e8d1.jpg?imageView2/2/format/webp?imageMogr2/auto-orient/quality/90/ignore-error/1"
-      :size="120" />
-    <Avatar url="https://image.woshipm.com/2023/08/11/038990a6-380f-11ee-8f7d-00163e0b5ff3.jpg" :size="120" />
-
-    <icon icon="mdi:home"></icon>
-    <icon icon="ant-design:aliwangwang-filled"></icon>
-    <icon icon="material-symbols:in-home-mode-rounded"></icon>
-
-    <pagination-test />
-
-    <empty-test></empty-test>
-
-    <image-loader-test></image-loader-test>
-
-    <contact-test></contact-test>
-
-    <menu-test></menu-test>
-
-    <message-test></message-test>
-
-    <layout-test></layout-test>
-
-    <loading-test></loading-test> -->
-
     <layout>
       <template #left>
         <div class="left">
           <sidebar></sidebar>
         </div>
       </template>
+
+      <!-- <Avatar
+      url="https://cdnfile.sspai.com/2025/12/05/039243279ce2b2dc867990073e67e8d1.jpg?imageView2/2/format/webp?imageMogr2/auto-orient/quality/90/ignore-error/1"
+      :size="120" />
+      <Avatar url="https://image.woshipm.com/2023/08/11/038990a6-380f-11ee-8f7d-00163e0b5ff3.jpg" :size="120" />
+
+      <icon icon="mdi:home"></icon>
+      <icon icon="ant-design:aliwangwang-filled"></icon>
+      <icon icon="material-symbols:in-home-mode-rounded"></icon>
+
+      <pagination-test />
+
+      <empty-test></empty-test>
+
+      <image-loader-test></image-loader-test>
+
+      <contact-test></contact-test>
+
+      <menu-test></menu-test>
+
+      <message-test></message-test>
+
+      <layout-test></layout-test>
+
+      <loading-test></loading-test> 
+
+      <message-area-test></message-area-test> -->
 
       <router-view></router-view>
     </layout>
@@ -48,6 +50,7 @@ import MenuTest from "./components/sidebar/menu/test.vue"
 import MessageTest from "./components/message/test.vue"
 import LayoutTest from "./components/layout/test.vue"
 import LoadingTest from "./components/loading/test.vue"
+import MessageAreaTest from "./components/messageArea/test.vue"
 
 import Sidebar from "./components/sidebar/index.vue"
 import Layout from "./components/layout/index.vue"
@@ -67,6 +70,7 @@ export default {
     LayoutTest,
     Layout,
     LoadingTest,
+    MessageAreaTest,
   },
 }
 </script>
