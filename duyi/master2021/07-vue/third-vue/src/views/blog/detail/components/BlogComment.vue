@@ -5,6 +5,7 @@
       :subTitle="`（${data.total}）`"
       :list="data.rows"
       :isLoading="isLoading"
+      @submit="handleSubmit"
     ></message-area>
   </div>
 </template>
@@ -12,7 +13,7 @@
 <script>
 import MessageArea from "@/components/messageArea"
 import fetchData from "@/mixins/fetchData"
-import { getCommentList } from "@/api/blog"
+import { getCommentList, addComment } from "@/api/blog"
 
 export default {
   components: { MessageArea },
@@ -20,7 +21,7 @@ export default {
   data() {
     return {
       page: 1,
-      limit: 5,
+      limit: 10,
     }
   },
   methods: {
@@ -30,6 +31,15 @@ export default {
         page: this.page,
         limit: this.limit,
       })
+    },
+    async handleSubmit(formData, callback) {
+      const res = await addComment({
+        ...formData,
+        blogId: this.$route.params.id,
+      })
+      this.data.rows.unshift(res)
+      this.data.total++
+      callback("评论成功")
     },
   },
 }

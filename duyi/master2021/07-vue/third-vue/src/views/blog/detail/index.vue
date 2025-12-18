@@ -1,7 +1,7 @@
 <template>
   <layout>
     <div class="main-container" v-loading="isLoading">
-      <!-- <blog-detail v-if="data" :blog="data"></blog-detail> -->
+      <blog-detail v-if="data" :blog="data"></blog-detail>
       <blog-comment></blog-comment>
     </div>
     <template #right>

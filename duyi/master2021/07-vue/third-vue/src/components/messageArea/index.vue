@@ -1,6 +1,6 @@
 <template>
   <div class="message-area-container">
-    <data-form></data-form>
+    <data-form @submit="handleSubmit"></data-form>
     <h3>
       <span>{{ title }}</span>
       <span>{{ subTitle }}</span>
@@ -36,6 +36,12 @@ export default {
   },
   data() {
     return {}
+  },
+  methods: {
+    handleSubmit(formData, callback) {
+      console.log("formData :>> ", formData)
+      this.$emit("submit", formData, callback)
+    },
   },
 }
 </script>

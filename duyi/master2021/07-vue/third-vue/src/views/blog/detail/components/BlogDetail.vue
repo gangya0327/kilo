@@ -4,7 +4,7 @@
     <div class="aside">
       <span> 日期：{{ formatDate(blog.createDate) }}</span>
       <span> 浏览量：{{ blog.scanNumber }}</span>
-      <a href="">
+      <a href="#data-form-container">
         <span>评论：{{ blog.scanNumber }}</span>
       </a>
       <span>{{ blog.category?.name }}</span>

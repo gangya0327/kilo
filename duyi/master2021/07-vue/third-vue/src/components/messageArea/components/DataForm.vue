@@ -1,5 +1,10 @@
 <template>
-  <form class="data-form-container" @submit.prevent="handleSubmit">
+  <form
+    id="data-form-container"
+    ref="form"
+    class="data-form-container"
+    @submit.prevent="handleSubmit"
+  >
     <div class="form-item">
       <div class="input-area">
         <input
@@ -57,12 +62,20 @@ export default {
         return
       }
       this.isSubmitting = true
-      this.$emit("submit", this.formData, () => {
-        this.isSubmitting = false
-        this.formData = {
-          nickname: "",
-          content: "",
-        }
+      this.$emit("submit", this.formData, (message) => {
+        this.$showMessage({
+          content: message,
+          type: "success",
+          duration: 3000,
+          container: this.$refs.form,
+          callback: () => {
+            this.isSubmitting = false
+            this.formData = {
+              nickname: "",
+              content: "",
+            }
+          },
+        })
       })
     },
   },
@@ -75,12 +88,12 @@ export default {
 .data-form-container {
   margin-bottom: 20px;
   overflow: hidden;
+  position: relative;
 
   .form-item {
     margin-bottom: 8px;
 
     .input-area {
-      width: 50%;
       position: relative;
 
       .text {
@@ -111,6 +124,7 @@ export default {
       }
 
       input {
+        width: 50%;
         padding: 0 15px;
         height: 40px;
       }
