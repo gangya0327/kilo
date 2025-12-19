@@ -23,16 +23,14 @@ import BlogComment from "./components/BlogComment.vue"
 export default {
   components: { Layout, BlogToc, BlogDetail, BlogComment },
   mixins: [fetchData({})],
-  data() {
-    return {
-      scrollTop: 0,
-    }
-  },
   mounted() {
+    this.$bus.$on("setMainScroll", this.handleSetMainScroll)
     this.$refs.mainContainer.addEventListener("scroll", this.handleScroll)
   },
   beforeDestroy() {
+    this.$bus.$emit("mainScroll")
     this.$refs.mainContainer.removeEventListener("scroll", this.handleScroll)
+    this.$bus.$off("setMainScroll", this.handleSetMainScroll)
   },
   updated() {
     const hash = location.hash
@@ -48,6 +46,9 @@ export default {
     handleScroll() {
       this.$bus.$emit("mainScroll", this.$refs.mainContainer)
     },
+    handleSetMainScroll(scrollTop) {
+      this.$refs.mainContainer.scrollTop = scrollTop
+    },
   },
 }
 </script>
@@ -61,6 +62,7 @@ export default {
   padding: 20px;
   overflow-x: hidden;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 .right-container {

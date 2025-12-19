@@ -14,7 +14,7 @@ export default {
   $emit(eventName, ...args) {
     if (!listeners[eventName]) return
     for (let handler of listeners[eventName]) {
-      handler(...args)
+      handler.apply(this, args)
     }
   },
 }

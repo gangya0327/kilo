@@ -36,6 +36,8 @@
 
       <router-view></router-view>
     </layout>
+
+    <to-top></to-top>
   </div>
 </template>
 
@@ -51,6 +53,7 @@ import MessageTest from "./components/message/test.vue"
 import LayoutTest from "./components/layout/test.vue"
 import LoadingTest from "./components/loading/test.vue"
 import MessageAreaTest from "./components/messageArea/test.vue"
+import ToTop from "./components/toTop/index.vue"
 
 import Sidebar from "./components/sidebar/index.vue"
 import Layout from "./components/layout/index.vue"
@@ -71,6 +74,7 @@ export default {
     Layout,
     LoadingTest,
     MessageAreaTest,
+    ToTop,
   },
 }
 </script>
