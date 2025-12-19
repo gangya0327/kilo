@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-list-container" ref="container" v-loading="isLoading">
+  <div class="blog-list-container" ref="mainContainer" v-loading="isLoading">
     <ul>
       <li v-for="(item, index) in data.rows" :key="index">
         <div v-if="item.thumb" class="thumb">
@@ -41,12 +41,13 @@
 <script>
 import Pagination from "@/components/pagination/index.vue"
 import fetchData from "@/mixins/fetchData"
+import mainScroll from "@/mixins/mainScroll"
 import { getBlogList } from "@/api/blog"
 import { formatDate } from "@/utils"
 
 export default {
   components: { Pagination },
-  mixins: [fetchData({})],
+  mixins: [fetchData({}), mainScroll("mainContainer")],
   computed: {
     routeInfo() {
       const categoryId = +this.$route.params.categoryId || -1

@@ -17,7 +17,10 @@ export default {
   },
   methods: {
     handleScroll(dom) {
-      if (!dom) this.show = false
+      if (!dom) {
+        this.show = false
+        return
+      }
       this.show = dom.scrollTop >= 500
     },
     handleToTop() {

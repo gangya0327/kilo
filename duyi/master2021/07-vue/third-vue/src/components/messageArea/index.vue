@@ -39,7 +39,6 @@ export default {
   },
   methods: {
     handleSubmit(formData, callback) {
-      console.log("formData :>> ", formData)
       this.$emit("submit", formData, callback)
     },
   },

@@ -17,4 +17,5 @@ export default {
       handler.apply(this, args)
     }
   },
+  listeners,
 }

@@ -7,7 +7,7 @@ Vue.config.productionTip = false
 // 开发环境强制开启 Devtools
 if (process.env.NODE_ENV === "development") {
   Vue.config.devtools = true
-  console.log("Vue Devtools 已启用")
+  console.info("Vue Devtools 已启用")
 }
 
 import router from "./router"

@@ -73,7 +73,6 @@ export default {
   },
   methods: {
     handleClick(newPage) {
-      console.log("newPage :>> ", newPage)
       if (newPage < 1) newPage = 1
       if (newPage > this.pageNum) newPage = this.pageNum
       this.$emit("pageChange", newPage)
