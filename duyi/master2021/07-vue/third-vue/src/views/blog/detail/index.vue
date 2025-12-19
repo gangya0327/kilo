@@ -1,6 +1,6 @@
 <template>
   <layout>
-    <div class="main-container" v-loading="isLoading">
+    <div ref="mainContainer" class="main-container" v-loading="isLoading">
       <blog-detail v-if="data" :blog="data"></blog-detail>
       <blog-comment></blog-comment>
     </div>
@@ -23,9 +23,30 @@ import BlogComment from "./components/BlogComment.vue"
 export default {
   components: { Layout, BlogToc, BlogDetail, BlogComment },
   mixins: [fetchData({})],
+  data() {
+    return {
+      scrollTop: 0,
+    }
+  },
+  mounted() {
+    this.$refs.mainContainer.addEventListener("scroll", this.handleScroll)
+  },
+  beforeDestroy() {
+    this.$refs.mainContainer.removeEventListener("scroll", this.handleScroll)
+  },
+  updated() {
+    const hash = location.hash
+    location.hash = ""
+    setTimeout(() => {
+      location.hash = hash
+    }, 100)
+  },
   methods: {
     async fetchData() {
       return await getBlog({ id: this.$route.params.id })
+    },
+    handleScroll() {
+      this.$bus.$emit("mainScroll", this.$refs.mainContainer)
     },
   },
 }

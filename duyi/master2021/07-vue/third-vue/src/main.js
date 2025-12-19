@@ -20,6 +20,9 @@ import "./mock"
 import vLoading from "@/directives/loading"
 Vue.directive("loading", vLoading)
 
+import eventBus from "@/bus"
+Vue.prototype.$bus = eventBus
+
 new Vue({
   router,
   render: (h) => h(App),

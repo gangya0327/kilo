@@ -7,7 +7,14 @@
       <a href="#data-form-container">
         <span>评论：{{ blog.scanNumber }}</span>
       </a>
-      <span>{{ blog.category?.name }}</span>
+      <router-link
+        :to="{
+          name: 'BlogCategory',
+          params: { categoryId: blog.category?.id || 1 },
+        }"
+      >
+        <span>{{ blog.category?.name }}</span>
+      </router-link>
     </div>
     <div v-html="blog.htmlContent" class="markdown-body"></div>
   </div>
