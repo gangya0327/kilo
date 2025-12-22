@@ -3,7 +3,8 @@ export default function debounce(fn, duration = 100) {
   return (...args) => {
     clearTimeout(timer)
     timer = setTimeout(() => {
-      fn.apply(this, args)
+      fn(...args)
+      // fn.apply(this, args)
     }, duration)
   }
 }

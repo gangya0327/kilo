@@ -13,16 +13,20 @@ Mock.mock(/^\/api\/blog(\?.+)?$/, "get", function (options) {
         {
           id: "@guid",
           title: "@ctitle(1, 20)",
-          description: "@cparagraph(1,10)",
+          description: "@cparagraph(5,20)",
           category: {
             "id|1-10": 0,
             name: "分类@id",
           },
           "scanNumber|0-300": 0,
           "commentNumber|0-300": 30,
+          // "thumb|1": [
+          //   Mock.Random.image("400x280", "#4A7", "#fff", "文章封面"),
+          //   "",
+          // ],
           "thumb|1": [
-            Mock.Random.image("400x280", "#4A7", "#fff", "文章封面"),
-            "",
+            Mock.Random.image("400x280", "#4A7", "#fff", "@natural(10,99)"),
+            // "",
           ],
           // thumb:
           //   '@pick(["", "http://dummyimage.com/400x280/4A7/fff&text=文章封面"])',

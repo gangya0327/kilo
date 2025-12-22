@@ -4,7 +4,7 @@
       <li v-for="(item, index) in data.rows" :key="index">
         <div v-if="item.thumb" class="thumb">
           <router-link :to="{ name: 'BlogDetail', params: { id: item.id } }">
-            <img :src="item.thumb" :alt="item.title" :title="item.title" />
+            <img v-lazy="item.thumb" :alt="item.title" :title="item.title" />
           </router-link>
         </div>
         <div class="main">
@@ -59,7 +59,7 @@ export default {
   watch: {
     async $route() {
       this.isLoading = true
-      this.$refs.container.scrollTo = 0
+      this.$refs.mainContainer.scrollTop = 0
       this.data = await this.fetchData()
       this.isLoading = false
     },
