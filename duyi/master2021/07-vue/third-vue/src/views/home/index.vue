@@ -51,11 +51,12 @@
 import { getBanner } from "@/api/banner"
 import CarouselItem from "./components/CarouselItem.vue"
 import Icon from "@/components/icon"
-import fetchData from "@/mixins/fetchData"
+// import fetchData from "@/mixins/fetchData"
+import { mapState } from "vuex"
 
 export default {
   components: { CarouselItem, Icon },
-  mixins: [fetchData([])],
+  // mixins: [fetchData([])],
   data() {
     return {
       activeIndex: 0, // 轮播图索引
@@ -64,9 +65,13 @@ export default {
     }
   },
   computed: {
+    ...mapState("banner", ["isLoading", "data"]),
     marginTop() {
       return -this.activeIndex * this.containerHeight + "px"
     },
+  },
+  created() {
+    this.$store.dispatch("banner/fetchBanner")
   },
   async mounted() {
     this.containerHeight = this.$refs.container.offsetHeight
@@ -76,9 +81,9 @@ export default {
     window.removeEventListener("resize", this.handleResize)
   },
   methods: {
-    async fetchData() {
-      return await getBanner()
-    },
+    // async fetchData() {
+    //   return await getBanner()
+    // },
     switchTo(index) {
       this.activeIndex = index
     },

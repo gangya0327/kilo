@@ -25,7 +25,11 @@ Vue.directive("lazy", vLazy)
 import eventBus from "@/bus"
 Vue.prototype.$bus = eventBus
 
+import store from "@/store"
+store.dispatch("setting/fetchSetting")
+
 new Vue({
   router,
+  store,
   render: (h) => h(App),
 }).$mount("#app")

@@ -1,10 +1,12 @@
 <template>
   <div class="sidebar-container">
     <div>
-      <Avatar class="avatar-container"
-        url="https://image.woshipm.com/2023/08/11/038990a6-380f-11ee-8f7d-00163e0b5ff3.jpg" :size="120" />
+      <template v-if="data">
+        <Avatar class="avatar-container" :url="data.avatar" :size="120" />
+      </template>
 
-      <div class="title"> 秩序之城</div>
+      <!-- <div class="title">秩序之城</div> -->
+      <div class="title">{{ data.siteTitle }}</div>
     </div>
 
     <menu-index></menu-index>
@@ -12,23 +14,27 @@
     <div>
       <contact></contact>
 
-      <p class="footer"> 浙 ICP 备 20251211 </p>
+      <p class="footer">{{ data.icp }}</p>
     </div>
   </div>
 </template>
 
 <script>
-import Avatar from '@/components/avatar/index.vue'
-import Contact from './contact/index.vue'
-import MenuIndex from './menu/index.vue'
+import Avatar from "@/components/avatar/index.vue"
+import Contact from "./contact/index.vue"
+import MenuIndex from "./menu/index.vue"
+import { mapState } from "vuex"
 
 export default {
-  components: { Avatar, Contact, MenuIndex }
+  components: { Avatar, Contact, MenuIndex },
+  computed: {
+    ...mapState("setting", ["data"]),
+  },
 }
 </script>
 
 <style lang="less" scoped>
-@import '@/styles/variables.less';
+@import "@/styles/variables.less";
 
 .sidebar-container {
   width: 100%;

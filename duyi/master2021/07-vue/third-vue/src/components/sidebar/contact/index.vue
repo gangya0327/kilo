@@ -3,53 +3,57 @@
     <li>
       <a>
         <Icon class="icon" icon="ri:firefox-fill" :size="20"></Icon>
-        <span>18768105813</span>
+        <span>{{ data.phone }}</span>
       </a>
       <div class="pop">
-        <img :src="imgPop3" alt="">
+        <img :src="imgPop3" alt="" />
       </div>
     </li>
     <li>
       <a href="https://www.qq.com" target="_blank">
         <Icon class="icon" icon="mdi:qqchat" :size="20"></Icon>
-        <span>https://www.qq.com</span>
+        <span>{{ data.tencent }}</span>
       </a>
       <div class="pop">
-        <img :src="imgPop1" alt="">
+        <img :src="imgPop1" alt="" />
       </div>
     </li>
     <li>
       <a href="https://taobao.com" target="_blank">
         <Icon class="icon" icon="ri:taobao-fill" :size="20"></Icon>
-        <span>https://taobao.com</span>
+        <span>{{ data.taobao }}</span>
       </a>
       <div class="pop">
-        <img :src="imgPop2" alt="">
+        <img :src="imgPop2" alt="" />
       </div>
     </li>
   </ul>
 </template>
 
 <script>
-import Icon from '@/components/icon/index.vue'
-import imgPop1 from '@/assets/avatar.jpeg'
-import imgPop2 from '@/assets/image.jpg'
-import imgPop3 from '@/assets/image2.jpeg'
+import Icon from "@/components/icon/index.vue"
+import imgPop1 from "@/assets/avatar.jpeg"
+import imgPop2 from "@/assets/image.jpg"
+import imgPop3 from "@/assets/image2.jpeg"
+import { mapState } from "vuex"
 
 export default {
   components: { Icon },
+  computed: {
+    ...mapState("setting", ["data"]),
+  },
   data() {
     return {
       imgPop1,
       imgPop2,
       imgPop3,
     }
-  }
+  },
 }
 </script>
 
 <style lang="less" scoped>
-@import '@/styles/variables.less';
+@import "@/styles/variables.less";
 
 .contact-container {
   list-style: none;
@@ -99,7 +103,7 @@ export default {
       }
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         left: 50%;
         bottom: -4px;

@@ -3,3 +3,4 @@ Mock.setup({ timeout: "300-900" })
 
 import "./banner"
 import "./blog"
+import "./setting"

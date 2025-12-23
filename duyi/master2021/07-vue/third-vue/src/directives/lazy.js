@@ -10,10 +10,10 @@ function setImage(img) {
   const rect = img.dom.getBoundingClientRect()
   const minImageHeight = 100 // 假设图片最小高度为100px
   if (rect.top < -minImageHeight || rect.top > clientHeight) {
-    console.log(img.dom, "img 不在视口范围内")
+    // console.log(img.dom, "img 不在视口范围内")
     img.dom.src = defaultBlog
   } else {
-    console.log(img.dom, "img 在视口范围内")
+    // console.log(img.dom, "img 在视口范围内")
     const tempImg = new Image()
     tempImg.src = img.src
     tempImg.onload = function () {
