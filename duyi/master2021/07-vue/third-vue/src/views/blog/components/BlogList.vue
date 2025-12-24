@@ -28,6 +28,7 @@
         </div>
       </li>
     </ul>
+    <empty v-if="data.rows.length === 0 && !isLoading" />
     <pagination
       v-if="data.total"
       :current="routeInfo.page"
@@ -44,9 +45,10 @@ import fetchData from "@/mixins/fetchData"
 import mainScroll from "@/mixins/mainScroll"
 import { getBlogList } from "@/api/blog"
 import { formatDate } from "@/utils"
+import Empty from "@/components/empty"
 
 export default {
-  components: { Pagination },
+  components: { Pagination, Empty },
   mixins: [fetchData({}), mainScroll("mainContainer")],
   computed: {
     routeInfo() {
