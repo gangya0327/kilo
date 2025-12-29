@@ -62,11 +62,9 @@
             auto-complete="on"
           />
         </el-form-item>
-        <div class="captcha-img" @click="handleCaptcha">
-          <!-- <img
-            src="http://127.0.0.1:7001/res/captcha"
-            alt="captcha"
-          > -->
+        <div class="captcha-img" @click="getCaptcha" v-html="captchaImg">
+          <!-- <img :src="captchaImg" alt="captcha" /> -->
+          <!-- <img src="http://localhost:7001/res/captcha" alt="captcha" /> -->
         </div>
       </div>
 
@@ -87,82 +85,96 @@
 </template>
 
 <script>
-import { validUsername } from '@/utils/validate';
+import { validUsername } from '@/utils/validate'
+import { getCaptcha } from '@/api/captcha'
 
 export default {
   name: 'Login',
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!validUsername(value)) {
-        callback(new Error('Please enter the correct user name'));
+        callback(new Error('请输入用户名'))
       } else {
-        callback();
+        callback()
       }
-    };
+    }
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {
-        callback(new Error('The loginPwd can not be less than 6 digits'));
+        callback(new Error('密码不能少于6位'))
       } else {
-        callback();
+        callback()
       }
-    };
+    }
     return {
       loginForm: {
         loginId: '',
         loginPwd: '',
         captcha: '',
+        checked: true,
       },
       loginRules: {
         loginId: [{ required: true, trigger: 'blur', validator: validateUsername }],
         loginPwd: [{ required: true, trigger: 'blur', validator: validatePassword }],
-        captcha: [{ required: true, trigger: 'blur', validator: validatePassword }],
+        captcha: [{ required: true, trigger: 'blur', message: '请输入验证码' }],
       },
       loading: false,
       passwordType: 'password',
       redirect: undefined,
-    };
+      captchaImg: '',
+    }
   },
   watch: {
     $route: {
       handler: function (route) {
-        this.redirect = route.query && route.query.redirect;
+        this.redirect = route.query && route.query.redirect
       },
       immediate: true,
     },
   },
+  created() {
+    this.getCaptcha()
+  },
   methods: {
     showPwd() {
       if (this.passwordType === 'password') {
-        this.passwordType = '';
+        this.passwordType = ''
       } else {
-        this.passwordType = 'password';
+        this.passwordType = 'password'
       }
       this.$nextTick(() => {
-        this.$refs.password.focus();
-      });
+        this.$refs.password.focus()
+      })
     },
     handleLogin() {
-      this.$refs.loginForm.validate((valid) => {
+      this.$refs.loginForm.validate(valid => {
         if (valid) {
-          this.loading = true;
+          this.loading = true
           this.$store
             .dispatch('user/login', this.loginForm)
             .then(() => {
-              this.$router.push({ path: this.redirect || '/' });
-              this.loading = false;
+              this.$router.push({ path: this.redirect || '/' })
+              this.loading = false
             })
-            .catch(() => {
-              this.loading = false;
-            });
+            .catch(res => {
+              this.$message({ message: JSON.parse(res).msg, type: 'error' })
+              this.loading = false
+              this.getCaptcha()
+              this.loginForm.captcha = ''
+              this.$refs.captcha.focus()
+            })
         } else {
-          console.log('error submit!!');
-          return false;
+          console.log('error submit!!')
+          return false
         }
-      });
+      })
     },
-    handleCaptcha() {},
+    getCaptcha() {
+      getCaptcha().then(res => {
+        this.captchaImg = res
+      })
+    },
   },
-};
+}
 </script>
 
 <style lang="scss">
@@ -189,6 +201,7 @@ $cursor: #fff;
     input {
       background: transparent;
       border: 0px;
+      appearance: none;
       -webkit-appearance: none;
       border-radius: 0px;
       padding: 12px 5px 12px 15px;
