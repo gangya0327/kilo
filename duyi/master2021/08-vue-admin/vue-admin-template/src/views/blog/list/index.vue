@@ -1,9 +1,22 @@
 <template>
-  <div> list </div>
+  <div>list</div>
 </template>
 
 <script>
-export default {}
+import { getBanner } from '@/api/banner'
+
+export default {
+  created() {
+    this.fetchData()
+  },
+  methods: {
+    fetchData() {
+      getBanner().then(res => {
+        console.log('res :>> ', res)
+      })
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped></style>

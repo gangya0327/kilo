@@ -52,7 +52,48 @@ export const constantRoutes = [
         path: 'dashboard',
         name: 'Dashboard',
         component: () => import('@/views/dashboard/index'),
-        meta: { title: 'Dashboard', icon: 'dashboard', auth: true },
+        meta: { title: '首页', icon: 'dashboard', auth: true },
+      },
+    ],
+  },
+
+  {
+    path: '/banner',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Banner',
+        component: () => import('@/views/banner/index'),
+        meta: { title: '轮播图', icon: 'form' },
+      },
+    ],
+  },
+
+  {
+    path: '/blog',
+    component: Layout,
+    redirect: '/blog/list',
+    name: 'Blog',
+    meta: { title: ' 文章管理', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'list',
+        name: 'BlogList',
+        component: () => import('@/views/blog/list/index'),
+        meta: { title: '文章列表', icon: 'table', auth: true },
+      },
+      {
+        path: 'type',
+        name: 'BlogType',
+        component: () => import('@/views/blog/type/index'),
+        meta: { title: '文章分类', icon: 'tree', auth: true },
+      },
+      {
+        path: 'add',
+        name: 'BlogAdd',
+        component: () => import('@/views/blog/add/index'),
+        meta: { title: '添加文章', icon: 'tree', auth: true },
       },
     ],
   },
@@ -158,34 +199,6 @@ export const constantRoutes = [
       {
         path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
         meta: { title: 'External Link', icon: 'link' },
-      },
-    ],
-  },
-
-  {
-    path: '/blog',
-    component: Layout,
-    redirect: '/blog/list',
-    name: 'Blog',
-    meta: { title: ' 文章管理', icon: 'el-icon-s-help' },
-    children: [
-      {
-        path: 'list',
-        name: 'BlogList',
-        component: () => import('@/views/blog/list/index'),
-        meta: { title: '文章列表', icon: 'table', auth: true },
-      },
-      {
-        path: 'type',
-        name: 'BlogType',
-        component: () => import('@/views/blog/type/index'),
-        meta: { title: '文章分类', icon: 'tree', auth: true },
-      },
-      {
-        path: 'add',
-        name: 'BlogAdd',
-        component: () => import('@/views/blog/add/index'),
-        meta: { title: '添加文章', icon: 'tree', auth: true },
       },
     ],
   },
