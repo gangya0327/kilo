@@ -7,7 +7,7 @@ export function getBanner() {
   })
 }
 
-export function setBanner(data) {
+export function editBanner(data) {
   return request({
     url: '/api/banner',
     method: 'post',

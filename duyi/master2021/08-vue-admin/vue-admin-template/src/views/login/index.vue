@@ -156,7 +156,8 @@ export default {
               this.loading = false
             })
             .catch(res => {
-              this.$message({ message: JSON.parse(res).msg, type: 'error' })
+              const obj = JSON.parse(res)
+              this.$message.error(obj.msg)
               this.loading = false
               this.getCaptcha()
               this.loginForm.captcha = ''

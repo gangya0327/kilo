@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import { getBanner, setBanner } from '@/api/banner'
+import { getBanner, editBanner } from '@/api/banner'
 import { server_URL } from '@/utils/url'
 import Upload from '@/components/upload'
 
@@ -98,7 +98,7 @@ export default {
           arr[i] = this.form
         }
       }
-      setBanner(arr).then(() => {
+      editBanner(arr).then(() => {
         this.dialogFormVisible = false
         this.$message.success('修改成功')
         this.fetchData()
