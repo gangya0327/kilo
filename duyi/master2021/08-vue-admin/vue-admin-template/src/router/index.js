@@ -106,6 +106,35 @@ export const constantRoutes = [
   },
 
   {
+    path: '/project',
+    component: Layout,
+    redirect: '/project/list',
+    name: 'Project',
+    meta: { title: ' 项目管理', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'list',
+        name: 'ProjectList',
+        component: () => import('@/views/project/index'),
+        meta: { title: '项目列表', icon: 'el-icon-notebook-2', auth: true },
+      },
+      // {
+      //   path: 'add',
+      //   name: 'ProjectAdd',
+      //   component: () => import('@/views/project/add/index'),
+      //   meta: { title: '添加项目', icon: 'el-icon-document-add', auth: true },
+      // },
+      // {
+      //   path: 'edit/:id',
+      //   name: 'ProjectEdit',
+      //   component: () => import('@/views/project/add/index'),
+      //   meta: { title: '编辑项目', icon: 'el-icon-document-checked', auth: true },
+      //   hidden: true,
+      // },
+    ],
+  },
+
+  {
     path: '/example',
     component: Layout,
     redirect: '/example/table',
