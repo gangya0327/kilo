@@ -23,13 +23,11 @@ class Store {
     console.error('不允许直接修改 state')
   }
   commit(type, payload) {
-    console.log('commit')
     const entry = this._mutations[type]
     if (!entry) return false
     entry(this.state, payload)
   }
   dispatch(type, payload) {
-    console.log('dispatch')
     const entry = this._actions[type]
     if (!entry) return false
     entry(this, payload)
