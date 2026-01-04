@@ -32,8 +32,6 @@ VueRouter.install = function (_Vue) {
   Vue.component('router-view', {
     render(h) {
       let component = null
-      console.log('this :>> ', this)
-      console.log('this :>> ', this.$router)
       const route = this.$router.$options.routes.find(
         (r) => r.path === this.$router.current
       )
