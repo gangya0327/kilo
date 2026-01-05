@@ -2,16 +2,20 @@ function defineReactive(obj, key, val) {
   // 递归 val 对象
   observe(val)
 
+  const dep = new Dep()
+
   Object.defineProperty(obj, key, {
     get() {
-      console.log('get :>> ', key, val)
+      Dep.target && dep.addDep(Dep.target)
       return val
     },
     set(newVal) {
       if (newVal !== val) {
-        console.log('set :>> ', key, newVal)
         observe(newVal)
         val = newVal
+
+        dep.notify()
+        // watchers.forEach((w) => w.update())
       }
     },
   })
@@ -81,14 +85,34 @@ class Compiler {
       }
     })
   }
+
+  update(node, exp, dir) {
+    // 设置初始值
+    const fn = this[dir + 'Updater']
+    fn && fn(node, this.$vm[exp])
+    // 创建 watcher 实例
+    new Watcher(this.$vm, exp, function (val) {
+      fn && fn(node, val)
+    })
+  }
+
   compileText(node) {
-    node.textContent = this.$vm.$data[RegExp.$1]
+    this.update(node, RegExp.$1, 'text')
+    // node.textContent = this.$vm.$data[RegExp.$1]
   }
-  text(node, val) {
-    node.textContent = this.$vm.$data[val]
+  text(node, exp) {
+    this.update(node, exp, 'text')
+    // node.textContent = this.$vm.$data[val]
   }
-  html(node, val) {
-    node.innerHTML = this.$vm.$data[val]
+  textUpdater(node, val) {
+    node.textContent = val
+  }
+  html(node, exp) {
+    this.update(node, exp, 'html')
+    // node.innerHTML = this.$vm.$data[val]
+  }
+  htmlUpdater(node, val) {
+    node.innerHTML = val
   }
 
   isElement(node) {
@@ -99,5 +123,36 @@ class Compiler {
   }
   isDirective(name) {
     return name.startsWith('v-')
+  }
+}
+
+// const watchers = []
+
+class Watcher {
+  constructor(vm, key, updater) {
+    this.vm = vm
+    this.key = key
+    this.updater = updater
+
+    Dep.target = this
+    this.vm[this.key]
+    Dep.target = null
+    // watchers.push(this)
+  }
+
+  update() {
+    this.updater.call(this.vm, this.vm[this.key])
+  }
+}
+
+class Dep {
+  constructor() {
+    this.deps = []
+  }
+  addDep(dep) {
+    this.deps.push(dep)
+  }
+  notify() {
+    this.deps.forEach((d) => d.update())
   }
 }
