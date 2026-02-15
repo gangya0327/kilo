@@ -18,6 +18,7 @@
 import KInput from '@/components/form/KInput.vue'
 import KFormItem from '@/components/form/KFormItem.vue'
 import KForm from '@/components/form/KForm.vue'
+
 export default {
   components: { KInput, KFormItem, KForm },
   data() {
@@ -39,6 +40,10 @@ export default {
           console.log('submit success')
         } else {
           console.log('submit fail')
+          this.$notice({
+            title: '提示',
+            message: '登录失败',
+          })
         }
       })
     },
