@@ -1,9 +1,20 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/element">Element</router-link>
+      <router-link to="/">
+        <svg-icon className="test" iconClass="home"></svg-icon>
+        Home
+      </router-link>
+      |
+      <router-link to="/about">
+        <svg-icon iconClass="about"></svg-icon>
+        About
+      </router-link>
+      |
+      <router-link to="/element">
+        <svg-icon iconClass="element"></svg-icon>
+        Element
+      </router-link>
     </nav>
 
     <!-- <p @click="$store.commit('add')">{{ $store.state.count }}</p>

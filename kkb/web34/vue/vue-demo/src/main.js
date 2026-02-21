@@ -21,6 +21,8 @@ Vue.prototype.$notice = function (options) {
   return comp
 }
 
+import '$i/index.js'
+
 new Vue({
   router,
   store,
