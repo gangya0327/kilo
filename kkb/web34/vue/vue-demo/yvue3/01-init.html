@@ -1,0 +1,69 @@
+<div id="app">
+  <h3>{{title}}</h3>
+</div>
+
+<script>
+  const Vue = {
+    createRenderer({querySelector}) {
+      return {
+        createApp(options) {
+          return {
+            mount(selector) {
+              if (options.setup) {
+                this.setupState = options.setup()
+              }
+              if (options.data) {
+                this.data = options.data()
+              }
+
+              this.proxy = new Proxy(this, {
+                get(target, key) {
+                  if (target.setupState && key in target.setupState) {
+                    return target.setupState[key]
+                  } else if (target.data && key in target.data) {
+                    return target.data[key]
+                  }
+                }
+              })
+
+              // 1. 获取宿主元素
+              const parent = querySelector(selector)
+              // 2. 把 options 中的数据渲染到视图中
+              const el = options.render.call(this.proxy)
+              // 3. 将渲染得到的结构追加到宿主元素中
+              parent.innerHTML = ''
+              parent.appendChild(el)
+              // 4. 建立更新机制
+            }
+          }
+        }
+      }
+    },
+    createApp(options) {
+      // 返回应用程序实例
+      const renderer = Vue.createRenderer({
+        querySelector(sel) {
+          return document.querySelector(sel)
+        }
+      })
+      return renderer.createApp(options)
+    }
+  }
+</script>
+
+<script>
+  const { createApp } = Vue
+  const app = createApp({
+    data() {
+      return {
+        title: 'Hello Vue3'
+      }
+    },
+    render() {
+      const h3 = document.createElement('h3')
+      h3.textContent = this.title
+      return h3
+    }
+  })
+  app.mount('#app')
+</script>
