@@ -1,0 +1,24 @@
+{
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "html",
+    "javascriptreact": "html",
+  },
+  "workbench.colorTheme": "Eva Dark Italic",
+  "files.exclude": {
+    // ".gitignore": true,
+    "README.md": true,
+    "node_modules": true,
+    // "dist": true,
+    // "public": true,
+    "package-lock.json": true,
+  },
+  "editor.fontSize": 18,
+  "window.zoomLevel": 1,
+}
