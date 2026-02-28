@@ -5,7 +5,8 @@ import './App.css';
 // import HomePage from './pages/3-composition/HomePage';
 // import ReduxPage from './pages/4-redux/ReduxPage';
 // import ReactReduxPage from './pages/5-react-redux/ReactReduxPage';
-import ReactRouterPage from './pages/6-react-router/ReactRouterPage';
+// import ReactRouterPage from './pages/6-react-router/ReactRouterPage';
+import PureComponentPage from './pages/7-pure-component/PureComponentPage';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       {/* <HomePage /> */}
       {/* <ReduxPage /> */}
       {/* <ReactReduxPage /> */}
-      <ReactRouterPage />
+      {/* <ReactRouterPage /> */}
+      <PureComponentPage />
     </div>
   );
 }
