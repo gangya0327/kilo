@@ -6,19 +6,21 @@ import './App.css';
 // import ReduxPage from './pages/4-redux/ReduxPage';
 // import ReactReduxPage from './pages/5-react-redux/ReactReduxPage';
 // import ReactRouterPage from './pages/6-react-router/ReactRouterPage';
-import PureComponentPage from './pages/7-pure-component/PureComponentPage';
+// import PureComponentPage from './pages/7-pure-component/PureComponentPage';
+import HookPage from './pages/8-hook/HookPage';
 
 function App() {
   return (
     <div className="App">
-      {/* <ClassComponent/>
-      <FunctionComponent/> */}
+      {/* <ClassComponent/> */}
+      {/* <FunctionComponent/> */}
       {/* <LifeCycle/> */}
       {/* <HomePage /> */}
       {/* <ReduxPage /> */}
       {/* <ReactReduxPage /> */}
       {/* <ReactRouterPage /> */}
-      <PureComponentPage />
+      {/* <PureComponentPage /> */}
+      <HookPage />
     </div>
   );
 }
