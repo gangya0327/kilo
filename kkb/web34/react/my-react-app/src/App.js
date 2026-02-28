@@ -3,7 +3,8 @@ import './App.css';
 // import FunctionComponent from './pages/1-component/FunctionComponent';
 // import LifeCycle from './pages/2-lifecycle/LifeCycle';
 // import HomePage from './pages/3-composition/HomePage';
-import ReduxPage from './pages/4-redux/ReduxPage';
+// import ReduxPage from './pages/4-redux/ReduxPage';
+import ReactReduxPage from './pages/5-react-redux/ReactReduxPage';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <FunctionComponent/> */}
       {/* <LifeCycle/> */}
       {/* <HomePage /> */}
-      <ReduxPage />
+      {/* <ReduxPage /> */}
+      <ReactReduxPage />
     </div>
   );
 }
