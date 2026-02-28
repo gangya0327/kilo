@@ -10,7 +10,7 @@
     "javascript": "html",
     "javascriptreact": "html",
   },
-  "workbench.colorTheme": "Eva Dark Italic",
+  "workbench.colorTheme": "Developers Theme - Firefox Dark",
   "files.exclude": {
     // ".gitignore": true,
     "README.md": true,
@@ -19,6 +19,6 @@
     // "public": true,
     "package-lock.json": true,
   },
-  "editor.fontSize": 18,
-  "window.zoomLevel": 1,
+  "editor.fontSize": 16,
+  "window.zoomLevel": 0.4,
 }
