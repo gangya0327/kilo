@@ -8,7 +8,9 @@ import './App.css';
 // import ReactRouterPage from './pages/6-react-router/ReactRouterPage';
 // import PureComponentPage from './pages/7-pure-component/PureComponentPage';
 // import HookPage from './pages/8-hook/HookPage';
-import CustomHookPage from './pages/9-custom-hook/CustomHookPage';
+// import CustomHookPage from './pages/9-custom-hook/CustomHookPage';
+// import UseMemoPage from './pages/10-useMemo/UseMemoPage';
+import UseCallbackPage from './pages/11-useCallback/UseCallbackPage';
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
       {/* <ReactRouterPage /> */}
       {/* <PureComponentPage /> */}
       {/* <HookPage /> */}
-      <CustomHookPage />
+      {/* <CustomHookPage /> */}
+      {/* <UseMemoPage /> */}
+      <UseCallbackPage />
     </div>
   );
 }
