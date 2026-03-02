@@ -1,5 +1,5 @@
 {
-  "prettier.enable": false,
+  "prettier.enable": true,
   "editor.formatOnSave": false,
   // Auto fix
   "editor.codeActionsOnSave": {
@@ -10,7 +10,13 @@
     "javascript": "html",
     "javascriptreact": "html",
   },
-  "workbench.colorTheme": "Developers Theme - Firefox Dark",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Eva Dark",
   "files.exclude": {
     // ".gitignore": true,
     "README.md": true,
