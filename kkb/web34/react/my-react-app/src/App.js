@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 // import ClassComponent from './pages/1-component/ClassComponent';
 // import FunctionComponent from './pages/1-component/FunctionComponent';
 // import LifeCycle from './pages/2-lifecycle/LifeCycle';
@@ -11,7 +11,8 @@ import './App.css';
 // import CustomHookPage from './pages/9-custom-hook/CustomHookPage';
 // import UseMemoPage from './pages/10-useMemo/UseMemoPage';
 // import UseCallbackPage from './pages/11-useCallback/UseCallbackPage';
-import AntdPage from './pages/12-antd/AntdPage';
+// import AntdPage from './pages/12-antd/AntdPage';
+import MyAntdPage from './pages/13-my-antd/MyAntdPage'
 
 function App() {
   return (
@@ -28,9 +29,10 @@ function App() {
       {/* <CustomHookPage /> */}
       {/* <UseMemoPage /> */}
       {/* <UseCallbackPage /> */}
-      <AntdPage />
+      {/* <AntdPage /> */}
+      <MyAntdPage />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
