@@ -1,10 +1,7 @@
-import React from 'react'
 import useForm from './useForm'
 import FieldContext from './FieldContext'
 
-const Form = React.forwardRef(({ form, children }, ref) => {
+export default function Form({ form, children }) {
   const [formInstance] = useForm(form)
   return <FieldContext.Provider value={formInstance}>{children}</FieldContext.Provider>
-})
-
-export default Form
+}

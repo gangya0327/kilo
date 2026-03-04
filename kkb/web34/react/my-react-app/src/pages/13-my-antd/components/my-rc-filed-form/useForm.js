@@ -5,15 +5,15 @@ class FormStore {
     this.store = {}
     this.fieldEntities = []
   }
-  getFieldsValue() {
+  getFieldsValue = () => {
     return { ...this.store }
   }
 
-  getFieldValue(name) {
+  getFieldValue = (name) => {
     return this.store[name]
   }
 
-  setFieldsValue(newStore) {
+  setFieldsValue = (newStore) => {
     this.store = { ...this.store, ...newStore }
     // 订阅组件更新
     this.fieldEntities.forEach((_f) => {
@@ -21,7 +21,7 @@ class FormStore {
     })
   }
 
-  registerFieldEntities(field) {
+  registerFieldEntities = (field) => {
     this.fieldEntities.push(field)
   }
 

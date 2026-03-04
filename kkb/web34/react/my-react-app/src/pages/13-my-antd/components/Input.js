@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 export default class Input extends Component {
   constructor(props) {
@@ -10,12 +10,7 @@ export default class Input extends Component {
     const { value = '', ...otherProps } = this.props
     return (
       <div style={{ padding: 10 }}>
-        <input
-          style={{ outline: 'none' }}
-          value={value}
-          {...otherProps}
-          onChange={(value) => console.log(value)}
-        />
+        <input style={{ outline: 'none' }} value={value} {...otherProps} />
       </div>
     )
   }
