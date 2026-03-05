@@ -16,7 +16,7 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Eva Dark",
+  "workbench.colorTheme": "Bearded Theme Altica",
   "files.exclude": {
     // ".gitignore": true,
     "README.md": true,
@@ -26,5 +26,4 @@
     "package-lock.json": true,
   },
   "editor.fontSize": 18,
-  "window.zoomLevel": 0.4,
 }

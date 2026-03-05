@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // import { Button, Form, Input } from 'antd'
 import Form, { Field } from './components/my-rc-filed-form'
 import Input from './components/Input'
@@ -17,6 +17,11 @@ export default function MyAntdPage(props) {
     console.log('Failed:', errorInfo)
   }
 
+  useEffect(() => {
+    form.setFieldsValue({ username: 'admin', password: '123456' })
+    console.log('form ->', form)
+  }, [form])
+
   return (
     <div style={{ width: '400px', margin: '0 auto' }}>
       <h3>MyAntdPage</h3>
@@ -29,9 +34,7 @@ export default function MyAntdPage(props) {
           <Input placeholder="Basic usage" type="password" />
         </Field>
         <Field>
-          <button type="primary">
-            提交
-          </button>
+          <button type="primary">提交</button>
         </Field>
       </Form>
     </div>

@@ -9,7 +9,11 @@ export default class Field extends Component {
   }
 
   componentDidMount() {
-    this.context.registerFieldEntities(this)
+    this.unregisterFieldEntities = this.context.registerFieldEntities(this)
+  }
+
+  componentWillUnmount() {
+    this.unregisterFieldEntities()
   }
 
   getControlled() {
