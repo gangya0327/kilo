@@ -11,8 +11,9 @@ import './App.css'
 // import CustomHookPage from './pages/9-custom-hook/CustomHookPage';
 // import UseMemoPage from './pages/10-useMemo/UseMemoPage';
 // import UseCallbackPage from './pages/11-useCallback/UseCallbackPage';
-// import AntdPage from './pages/12-antd/AntdPage';
-import MyAntdPage from './pages/13-my-antd/MyAntdPage'
+import AntdPage from './pages/12-antd/AntdPage';
+// import MyAntdPage from './pages/13-my-antd/MyAntdPage'
+import MyAntd2Page from './pages/14-my-antd2/MyAntd2Page'
 
 function App() {
   return (
@@ -29,8 +30,9 @@ function App() {
       {/* <CustomHookPage /> */}
       {/* <UseMemoPage /> */}
       {/* <UseCallbackPage /> */}
-      {/* <AntdPage /> */}
-      <MyAntdPage />
+      <AntdPage />
+      {/* <MyAntdPage /> */}
+      <MyAntd2Page />
     </div>
   )
 }

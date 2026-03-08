@@ -16,7 +16,7 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Bearded Theme Altica",
+  "workbench.colorTheme": "Catppuccin Latte",
   "files.exclude": {
     // ".gitignore": true,
     "README.md": true,
@@ -25,5 +25,5 @@
     // "public": true,
     "package-lock.json": true,
   },
-  "editor.fontSize": 18,
+  "editor.fontSize": 17,
 }

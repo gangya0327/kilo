@@ -3,9 +3,8 @@ import useForm from './useForm'
 import FieldContext from './FieldContext'
 
 export default function Form({ form, children, onFinish, onFinishFailed }, ref) {
-  // 类组件，初次初始化数据仓库，发生在这里，而函数组件则发生在 Form 的父组件
+  // ! class 组件的初始化，而函数组件的初始化发生在 Form 的父组件
   const [formInstance] = useForm(form)
-  console.log('formInstance ->', formInstance)
   formInstance.setCallbacks({ onFinish, onFinishFailed })
 
   React.useImperativeHandle(ref, () => formInstance)

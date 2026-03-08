@@ -4,9 +4,8 @@ import Field from './Field'
 import useForm from './useForm'
 
 const Form = React.forwardRef(_Form)
-// const Form = _Form
 Form.Field = Field
 Form.useForm = useForm
 
-export { Field, useForm }
+export { Field }
 export default Form
