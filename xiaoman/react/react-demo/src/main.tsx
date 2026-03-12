@@ -18,7 +18,9 @@ import './index.css'
 // import Demo from './demo/16-React.memo.tsx'
 // import Demo from './demo/17-useCallback'
 // import Demo from './demo/18-useDebugValue'
-import Demo from './demo/19-useId'
+// import Demo from './demo/19-useId'
+import Demo from './demo/20-component'
+import './components/Message'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
