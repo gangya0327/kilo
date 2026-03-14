@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-// import App from './App.tsx'
+// import './index.css'
+import App from './App.tsx'
 // import Demo from './demo/7-useReducer'
 // import Demo from './demo/8-useImmer'
 // import Demo from './demo/9-useSyncExternalStore1'
@@ -25,11 +25,11 @@ import './index.css'
 // import Demo from './demo/22-component-control'
 // import Demo from './demo/23-component-async'
 // import Demo from './demo/24-component-hoc'
-import Demo from './demo/25-css-module'
+// import Demo from './demo/25-css-module'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {/* <App /> */}
-    <Demo />
+    <App />
+    {/* <Demo /> */}
   </StrictMode>
 )
